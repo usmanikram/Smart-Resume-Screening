@@ -37,11 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
     'base.apps.BaseConfig',
-=======
-    'testing.apps.TestingConfig',
->>>>>>> 0175ca392b5b6ac57fffd9bd37a8ac1f12ea39c2
 ]
 
 MIDDLEWARE = [
@@ -59,13 +55,7 @@ ROOT_URLCONF = 'SRS.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-<<<<<<< HEAD
-        'DIRS': [
-            BASE_DIR / 'templates'
-        ],
-=======
         'DIRS': [BASE_DIR / 'templates'],
->>>>>>> 0175ca392b5b6ac57fffd9bd37a8ac1f12ea39c2
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
