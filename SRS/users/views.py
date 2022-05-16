@@ -6,3 +6,10 @@ def dashboard(request):
 
 def editprofile(request):
     return render(request, 'editprofile.html')
+
+def jobs(request):
+    return render(request, 'jobs.html')
+
+
+def reports(request):
+    return render(request, 'reports.html')
