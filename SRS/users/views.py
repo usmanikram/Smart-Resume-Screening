@@ -17,7 +17,13 @@ def addjob(request):
 
 def reports(request):
     return render(request, 'reports.html')
+
+def feedback(request):
+    return render(request, 'feedback.html')
     
+def addfeedback(request):
+    return render(request, 'addfeedback.html')
+
 def insights(request):
     return render(request, 'insights.html')
 
