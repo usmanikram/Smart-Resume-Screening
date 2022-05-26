@@ -2,30 +2,39 @@ from django.shortcuts import render
 
 # Create your views here.
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    context = {"segment" : "dashboard"}
+    return render(request, 'dashboard.html', context)
 
 def editprofile(request):
-    return render(request, 'editprofile.html')
+    context = {"segment" : "editprofile"}
+    return render(request, 'editprofile.html', context)
 
 def jobs(request):
-    return render(request, 'jobs.html')
+    context = {"segment" : "jobs"}
+    return render(request, 'jobs.html', context)
 
 
 def addjob(request):
-    return render(request, 'addjob.html')
+    context = {"segment" : "addjob"}
+    return render(request, 'addjob.html', context)
 
 
 def reports(request):
-    return render(request, 'reports.html')
+    context = {"segment" : "reports"}
+    return render(request, 'reports.html', context)
 
 def feedback(request):
-    return render(request, 'feedback.html')
+    context = {"segment" : "feedback"}
+    return render(request, 'feedback.html', context)
     
 def addfeedback(request):
-    return render(request, 'addfeedback.html')
+    context = {"segment" : "addfeedback"}
+    return render(request, 'addfeedback.html', context)
 
 def insights(request):
-    return render(request, 'insights.html')
+    context = {"segment" : "insights"}
+    return render(request, 'insights.html', context)
 
 def settings(request):
-    return render(request, 'settings.html')
+    context = {"segment" : "settings"}
+    return render(request, 'settings.html', context)
