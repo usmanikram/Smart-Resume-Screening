@@ -1,0 +1,105 @@
+.front-1{
+    width: 100%;
+    min-height: 650px;
+    background-color: whitesmoke;
+    margin-bottom: 25px;
+}
+
+
+
+/* .title{
+padding-right: 65px;
+padding-bottom: 24px;
+}
+.cover{
+    padding: 5%;
+} */
+@media only screen and (min-width: 600px) {
+.cover{
+    display: inline;
+    grid-template-columns: 1fr 3fr;
+}
+}
+@media only screen and (min-width: 768px) {
+/* For tablets: */
+.cover{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+}
+@media only screen and (max-width: 600px) {
+/* For tablets: */
+.img-1{
+  visibility: hidden;
+}
+  
+}
+@media only screen and (min-width: 480px) {
+/* For mobiles: */
+.cover{
+    display: grid;
+    grid-template-rows: 1fr;
+    max-height: 5px;
+    }
+}
+
+.text-1,.front-4{
+    text-align: center;
+}
+.front-2,.front-4{
+  padding: 10px;
+}
+.inner-4{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+@media only screen and (max-width: 550px) {
+/* For mobiles: */
+.inner-4{
+    display: inline;
+    grid-template-rows: 1fr 1fr 1fr;
+    }
+
+}
+.title{
+margin-left: 40px;
+}
+.main-text{
+font-size:3vw; font-family: 'Source Code Pro', monospace; color: #6D567A ;padding-bottom: 0%;line-height:2px
+}
+.main-text-2{
+font-size: 100px;font-size:8vw; font-family: 'Source Code Pro', monospace; color: #80BDC1; margin-top: 0%;
+}
+.main-span{
+color: #3E2949
+}
+.main-span-2{
+color: #897099;
+
+}
+.front-img{
+height:auto;width: 100%;
+}
+.inner-img{
+    height: auto;
+    width: 70%;
+    padding-left: 150px;
+}
+.text{
+   padding-left: 200px;
+   padding-top: 90px;
+   
+}
+.inner-text{
+  color: white;
+}
+@media only screen and (max-width: 1050px) {
+/* For mobiles: */
+.extra{
+  display: none;
+  }
+}
+.extra{
+  background-color: #a51bb2;
+  
+}
