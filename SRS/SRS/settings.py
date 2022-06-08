@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-a3bje3+)6@odqd0ik4ng8ei#k@95e_+o@936hr)ixmt&rl_1$('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['smart-resume-screening.herokuapp.com','127.0.0.1']
 
 
 # Application definition
