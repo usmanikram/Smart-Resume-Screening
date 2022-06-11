@@ -1,0 +1,105 @@
+{% extends 'user/main.html'%}
+
+{%block content%}
+{% load static %}
+{% include 'user/navigation-auth.html'%}
+  <!-- -------- START HEADER 1 w/ text and image on right ------- -->
+
+  <header>
+    <div class="page-header section-height-100">
+      <div class="oblique position-absolute top-0 h-100 d-md-block d-none">
+        <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6 extra">
+            <div class="text">
+                <h3 class="inner-text">
+                    Hire Smartly and<br>be a part of SRS now! 🤞
+                </h3>
+            </div>
+            <div class="inner-div">
+           <img src="{% static 'assets/img/girl.png'%}" alt="" class="inner-img">
+        </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6 col-md-7 d-flex justify-content-center flex-column">
+             <section>
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-lg-7 mx-auto d-flex justify-content-center flex-column">
+          <br><br><br>
+        <h3 class="text-center text-primary text-gradient">Sign Up</h3>
+        <form role="form" id="contact-form" method="post" autocomplete="off">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <label>First Name</label>
+                <div class="input-group mb-4">
+                  <input class="form-control" placeholder="" aria-label="First Name..." type="text" >
+                </div>
+              </div>
+              <div class="col-md-6 ps-2">
+                <label>Last Name</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="" aria-label="Last Name..." >
+                </div>
+              </div>
+            </div> 
+            <div class="row">
+            <div class="col-md-6">
+                <label>Company Name</label>
+                <div class="input-group mb-4">
+                  <input class="form-control" placeholder="" aria-label="First Name..." type="text" >
+                </div>
+              </div>
+              <div class="col-md-6 ps-2">
+                <label>Company Address</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="" aria-label="Last Name..." >
+                </div>
+              </div>
+            </div> 
+            <div class="row">
+            <div class="col-md-6">
+                <label>Email Address</label>
+                <div class="input-group mb-4">
+                  <input class="form-control" placeholder="" aria-label="First Name..." type="text" >
+                </div>
+              </div>
+              <div class="col-md-6 ps-2">
+                <label>Password</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="" aria-label="Last Name..." >
+                </div>
+              </div>
+            </div>
+            </div>
+          
+        
+            <div class="row">
+             
+              <div class="col-md-12">
+                <button type="submit" class="btn bg-gradient-primary w-100">Sign Up</button>
+              </div>
+              <div class="col-md-12">
+                <div class="form-check form-switch mb-4">
+                  <label class="form-check-label" for="flexSwitchCheckDefault">Already Have An Account? <a href="javascript:;" class="text-dark"><u>Sign In Here</u></a>.</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- -------- END HEADER 1 w/ text and image on right ------- -->
+  
+    
+{%endblock%}
