@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath SRS SRS.wsgi --log-file -
