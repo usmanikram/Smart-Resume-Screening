@@ -1,0 +1,248 @@
+{% extends 'layouts/userdashboard.html'%}
+
+{% block title %} Jobs {% endblock title %}
+{% block content %}
+<section>
+    <div class="container-fluid py-4 bg-white">
+        <div class="row">
+          <div class="col-lg-12 ">
+            <h3 class="text-center">Jobs</h3>
+    <a href="addjob"><button type="button" class="btn btn-success text-right">Create New Job</button></a>
+  
+    <div class="card-body px-0 pb-2">
+        <div class="table-responsive">
+          <table class="table align-items-center mb-0">
+            <thead>
+              <tr>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Designation</th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Candidates</th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Industry</th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Creation Date</th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
+                <th class="text-secondary opacity-7"></th>
+                <th class="text-secondary opacity-7"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="d-flex px-2 py-1">
+                    <div>
+                      <img src="/static/assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3">
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                      <h6 class="mb-0 text-sm">DevOps Engineer</h6>
+                    </div>
+                  </div>
+                </td>
+                <td class="align-middle text-center text-sm">
+                  <span class="text-xs font-weight-bold">100 </span>
+                </td>
+                <td class="align-middle text-center text-sm">
+                  <span class="text-xs font-weight-bold">Information Technology </span>
+                </td>
+                <td class="align-middle text-center">
+                  <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
+                </td>
+                <td class="align-middle text-center">
+                  <h6><span class="badge bg-gradient-success text-xxs">Completed</span></h6>
+                </td>
+                <td class="align-middle">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                      Edit
+                    </a>
+                  </td>
+                  <td class="align-middle">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                      Delete
+                    </a>
+                  </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="d-flex px-2 py-1">
+                    <div>
+                      <img src="/static/assets/img/small-logos/logo-atlassian.svg" class="avatar avatar-sm me-3">
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                      <h6 class="mb-0 text-sm">Associate Software Engineer</h6>
+                    </div>
+                  </div>
+                </td>
+                  <td class="align-middle text-center text-sm">
+                  <span class="text-xs font-weight-bold">50 </span>
+                  </td>
+                  <td class="align-middle text-center text-sm">
+                  <span class="text-xs font-weight-bold">Information Technology </span>
+                  </td>
+                  <td class="align-middle text-center">
+                    <span class="text-secondary text-xs font-weight-bold">11/01/19</span>
+                  </td>
+                  <td class="align-middle text-center">
+                  <span class="badge bg-gradient-warning text-xxs">In Progress</span>
+                  </td>
+           
+                <td class="align-middle">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                      Edit
+                    </a>
+                  </td>
+                  <td class="align-middle">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                      Delete
+                    </a>
+                  </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="d-flex px-2 py-1">
+                    <div>
+                      <img src="/static/assets/img/small-logos/logo-slack.svg" class="avatar avatar-sm me-3">
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                      <h6 class="mb-0 text-sm">Data Scientist</h6>
+                    </div>
+                  </div>
+                </td>
+
+              </td>
+              <td class="align-middle text-center text-sm">
+                <span class="text-xs font-weight-bold">100 </span>
+              </td>
+              <td class="align-middle text-center text-sm">
+                <span class="text-xs font-weight-bold">Information Technology </span>
+              </td>
+              <td class="align-middle text-center">
+                <span class="text-secondary text-xs font-weight-bold">19/09/17</span>
+              </td>
+              <td class="align-middle text-center">
+                <span class="badge bg-gradient-success text-xxs">Completed</span>
+              </td>        
+
+                <td class="align-middle">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                      Edit
+                    </a>
+                  </td>
+                  <td class="align-middle">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                      Delete
+                    </a>
+                  </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="d-flex px-2 py-1">
+                    <div>
+                      <img src="/static/assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm me-3">
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                      <h6 class="mb-0 text-sm">MEAN Stack Developer</h6>
+                    </div>
+                  </div>
+                </td>
+                 <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold">100 </span>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold">Information Technology </span>
+                      </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">24/12/08</span>
+                      </td>
+                      <td class="align-middle text-center">
+                        <span class="badge bg-gradient-danger text-xxs">In Progress</span>
+                      </td>
+                <td class="align-middle">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                      Edit
+                    </a>
+                  </td>
+                  <td class="align-middle">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                      Delete
+                    </a>
+                  </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="d-flex px-2 py-1">
+                    <div>
+                      <img src="/static/assets/img/small-logos/logo-jira.svg" class="avatar avatar-sm me-3">
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                      <h6 class="mb-0 text-sm">Electrical Engineer</h6>
+                    </div>
+                  </div>
+                </td>
+               
+                  <td class="align-middle text-center text-sm">
+                    <span class="text-xs font-weight-bold">100 </span>
+                  </td>
+                  <td class="align-middle text-center text-sm">
+                    <span class="text-xs font-weight-bold">Engineering </span>
+                  </td>
+                  <td class="align-middle text-center">
+                    <span class="text-secondary text-xs font-weight-bold">04/10/21</span>
+                  </td>
+                  <td class="align-middle text-center">
+                    <span class="badge bg-gradient-success text-xxs">Completed</span>
+                  </td>
+            
+                <td class="align-middle">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                      Edit
+                    </a>
+                  </td>
+                  <td class="align-middle">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                      Delete
+                    </a>
+                  </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="d-flex px-2 py-1">
+                    <div>
+                      <img src="/static/assets/img/small-logos/logo-invision.svg" class="avatar avatar-sm me-3">
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                      <h6 class="mb-0 text-sm">Civil Engineer</h6>
+                    </div>
+                  </div>
+                </td>
+                <td class="align-middle text-center text-sm">
+                  <span class="text-xs font-weight-bold">100 </span>
+                </td>
+                <td class="align-middle text-center text-sm">
+                  <span class="text-xs font-weight-bold">Engineering </span>
+                </td>
+                <td class="align-middle text-center">
+                  <span class="text-secondary text-xs font-weight-bold">14/09/20</span>
+                </td>
+                <td class="align-middle text-center">
+                  <span class="badge bg-gradient-success text-xxs">Completed</span>
+                </td>
+          
+                <td class="align-middle">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                      Edit
+                    </a>
+                  </td>
+                  <td class="align-middle">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                      Delete
+                    </a>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+</div>
+</div>
+
+  </section>
+{% endblock content %}
