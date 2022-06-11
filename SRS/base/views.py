@@ -9,6 +9,6 @@ def home(request):
 def ok(request):
     return render(request, 'base/addUser.html')
 
-def loginPage(request):
-    return render(request, 'base/login_register.html')
+def login(request):
+    return render(request, 'base/login.html')
 
