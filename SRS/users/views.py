@@ -18,6 +18,10 @@ def addjob(request):
     context = {"segment" : "addjob"}
     return render(request, 'addjob.html', context)
 
+def createjob(request):
+    context={"segment": "createjob"}
+    return render(request, 'createjob.html',context)
+
 
 def reports(request):
     context = {"segment" : "reports"}
