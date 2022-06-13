@@ -4,5 +4,5 @@ from django.shortcuts import render
 
 
 urlpatterns = [
-path('',views.admindash,name='admindash'),
+    path('',views.admindash,name='admindash'),
 ]
