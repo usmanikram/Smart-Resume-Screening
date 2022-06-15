@@ -5,31 +5,6 @@
   <script src="{% static 'assets/js/plugins/perfect-scrollbar.min.js' %}"></script>
   <script src="{% static 'assets/js/plugins/prism.min.js' %}"></script>
   <script src="{% static 'assets/js/plugins/parallax.min.js' %}"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="/static/assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="/static/assets/js/soft-ui-dashboard.js"></script>
-  <script type="text/javascript">
-    $("#addRow").click(function () {
-        var html = '';
-        html += '<div id="inputFormRow">';
-        html += '<div class="input-group mb-3 px-5">';
-        html += '<input type="text" name="title[]" class="form-control m-input" placeholder="" autocomplete="off">';
-        html += '<div class="input-group-append">';
-        html += '<button id="removeRow" type="button" class="btn btn-danger" style="margin-bottom: 0rem;">x</button>';
-        html += '</div>';
-        html += '</div>';
-
-        $('#newRow').append(html);
-    });
-
-    // remove row
-    $(document).on('click', '#removeRow', function () {
-        $(this).closest('#inputFormRow').remove();
-    });
-</script>
-
-
-
   <script>
   document.getElementById("year").innerHTML = new Date().getFullYear();
   </script>
