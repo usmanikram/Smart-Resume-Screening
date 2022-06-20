@@ -13,11 +13,13 @@ def jobs(request):
     context = {"segment" : "jobs"}
     return render(request, 'jobs.html', context)
 
+def createjob(request):
+    context={"segment": "createjob"}
+    return render(request, 'createjob.html',context)
 
-def addjob(request):
-    context = {"segment" : "addjob"}
-    return render(request, 'addjob.html', context)
-
+def viewjobs(request):
+    context={"segment":"viewjobs"}
+    return render(request, 'viewjobs.html')
 
 def reports(request):
     context = {"segment" : "reports"}
