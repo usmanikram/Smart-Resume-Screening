@@ -40,3 +40,5 @@ def insights(request):
 def settings(request):
     context = {"segment" : "settings"}
     return render(request, 'settings.html', context)
+def finalreport(request):
+    return render(request, 'finalreport.html')
