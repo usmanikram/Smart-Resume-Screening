@@ -8,6 +8,19 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="/static/assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="/static/assets/js/soft-ui-dashboard.js"></script>
+
+  <!--Data table-->
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+          $('#example').DataTable();
+    });
+  </script>
+
+<!--Create Job-->
   <script type="text/javascript">
     $("#addRow").click(function () {
         var html = '';
