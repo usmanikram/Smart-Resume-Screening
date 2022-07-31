@@ -51,3 +51,7 @@ def viewjobs(request):
 def viewjobdetails(request):
     context={"segment":"viewjobdetails"}
     return render(request, 'viewjobdetails.html',context)
+
+def editjob(request):
+    context={"segment":"editjob"}
+    return render(request, 'editjob.html',context)
