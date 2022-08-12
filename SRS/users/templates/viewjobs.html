@@ -1,76 +1,380 @@
 {% extends 'layouts/userdashboard.html'%}
-
-{% block title %} Jobs {% endblock title %}
+{% include 'user/scripts.html' %}
+{% block title %} View Job {% endblock title %}
 {% block content %}
 <section>
-  <div class="container py-5">
+    <div class="container-fluid py-4 bg-white">
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="text-center">View Jobs</h3>
+            <a href="createjob"
+              ><button type="button" class="btn btn-success text-right">
+                Create New Job
+              </button></a
+            >
+    
+            <!--  Content Start -->
+            <div class="card">
+              <div class="table-responsive">
+                <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                      <th
+                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                      >
+                        Job Title
+                      </th>
+                      <th
+                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                      >
+                        Date Created On
+                      </th>
+                      <th
+                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                      >
+                        Total Results Required
+                      </th>
 
-    <div class="text-center">
-        <h2>Jobs and Details</h2>
+                      <th
+                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                      >
+                        Status
+                      </th>
 
-        <button class="btn btn-info">Add Job</button>
-        <button class="btn btn-primary ">Download</button>
-        
-        <div class="btn-group">
-            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Sort
-            </button>
-            <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
+                      <th
+                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                      >
+                        Details
+                      </th>
+
+                      <th class="text-secondary opacity-7"></th>
+                      <th class="text-secondary opacity-7"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img
+                              src="/static/assets/img/small-logos/logo-xd.svg"
+                              class="avatar avatar-sm me-3"
+                            />
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-xs">Junior Software Developer</h6>
+                          </div>
+                        </div>
+                      </td>
+    
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold"
+                          >23/04/18</span
+                        >
+                      </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold"
+                          >20</span
+                        >
+                      </td>
+
+                      <td class="align-middle text-center">
+                        <span class="status text-success">&bull;Active</span>
+                      </td>
+
+                      <td class="align-middle text-center">
+                        <a href="viewjobdetails"
+                          ><button type="button" class="btn btn-info btn-sm btn-rounded text-right mt-2">
+                            View
+                          </button></a
+                        >
+                      </td>
+                      <td class="align-middle">
+                        <a href="/"
+                          ><button
+                            type="button"
+                            onClick="delAlert()"
+                            class="btn btn-danger btn-sm btn-rounded text-right mt-2"
+                          >
+                            Delete User
+                          </button></a
+                        >
+                      </td>
+                    </tr>
+    
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img
+                              src="/static/assets/img/small-logos/logo-atlassian.svg"
+                              class="avatar avatar-sm me-3"
+                            />
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-xs">SQA Engineer</h6>
+                          </div>
+                        </div>
+                      </td>
+    
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold"
+                          >11/01/19</span
+                        >
+                      </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold"
+                          >10</span
+                        >
+                      </td>
+
+                      <td class="align-middle text-center">
+                        <span class="status text-success">&bull;Active</span>
+                      </td>
+
+                      <td class="align-middle text-center">
+                        <a href="viewjobdetails"
+                          ><button type="button" class="btn btn-info btn-sm btn-rounded text-right mt-2">
+                            View
+                          </button></a
+                        >
+                      </td>
+                      <td class="align-middle">
+                        <a href="/"
+                          ><button
+                            type="button"
+                            onClick="delAlert()"
+                            class="btn btn-danger btn-sm btn-rounded text-right mt-2"
+                          >
+                            Delete User
+                          </button></a
+                        >
+                      </td>
+                    </tr>
+    
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img
+                              src="/static/assets/img/small-logos/logo-slack.svg"
+                              class="avatar avatar-sm me-3"
+                            />
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-xs">Data Scientist</h6>
+                          </div>
+                        </div>
+                      </td>
+    
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold"
+                          >19/09/17</span
+                        >
+                      </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold"
+                          >10</span
+                        >
+                      </td>
+
+                      <td class="align-middle text-center">
+                        <span class="status text-success">&bull;Active</span>
+                      </td>
+                      
+
+                      <td class="align-middle text-center">
+                        <a href="viewjobdetails"
+                          ><button type="button" class="btn btn-info btn-sm btn-rounded text-right mt-2">
+                            View
+                          </button></a
+                        >
+                      </td>
+                      <td class="align-middle">
+                        <a href="/"
+                          ><button
+                            type="button"
+                            onClick="delAlert()"
+                            class="btn btn-danger btn-sm btn-rounded text-right mt-2"
+                          >
+                            Delete User
+                          </button></a
+                        >
+                      </td>
+                    </tr>
+    
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img
+                              src="/static/assets/img/small-logos/logo-spotify.svg"
+                              class="avatar avatar-sm me-3"
+                            />
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-xs">Web Developer</h6>
+                          </div>
+                        </div>
+                      </td>
+    
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold"
+                          >24/12/08</span
+                        >
+                      </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold"
+                          >15</span
+                        >
+                      </td>
+
+                      <td class="align-middle text-center">
+                        <span class="status text-success">&bull;Active</span>
+                      </td>
+                      
+
+                      <td class="align-middle text-center">
+                        <a href="viewjobdetails"
+                          ><button type="button" class="btn btn-info btn-sm btn-rounded text-right mt-2">
+                            View
+                          </button></a
+                        >
+                      </td>
+                      <td class="align-middle">
+                        <a href="/"
+                          ><button
+                            type="button"
+                            onClick="delAlert()"
+                            class="btn btn-danger btn-sm btn-rounded text-right mt-2"
+                          >
+                            Delete User
+                          </button></a
+                        >
+                      </td>
+                    </tr>
+    
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img
+                              src="/static/assets/img/small-logos/logo-invision.svg"
+                              class="avatar avatar-sm me-3"
+                            />
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-xs">HR Manager</h6>
+                          </div>
+                        </div>
+                      </td>
+    
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold"
+                          >04/10/21</span
+                        >
+                      </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold"
+                          >20</span
+                        >
+                      </td>
+
+                      <td class="align-middle text-center">
+                        <span class="status text-success">&bull;Active</span>
+                      </td>
+                      
+
+                      <td class="align-middle text-center">
+                        <a href="viewjobdetails"
+                          ><button type="button" class="btn btn-info btn-sm btn-rounded text-right mt-2">
+                            View
+                          </button></a
+                        >
+                      </td>
+                      <td class="align-middle">
+                        <a href="/"
+                          ><button
+                            type="button"
+                            onClick="delAlert()"
+                            class="btn btn-danger btn-sm btn-rounded text-right mt-2"
+                          >
+                            Delete User
+                          </button></a
+                        >
+                      </td>
+                    </tr>
+    
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img
+                              src="/static/assets/img/small-logos/logo-invision.svg"
+                              class="avatar avatar-sm me-3"
+                            />
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-xs">Senior .Net Developer</h6>
+                          </div>
+                        </div>
+                      </td>
+    
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold"
+                          >14/09/20</span
+                        >
+                      </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold"
+                          >10</span
+                        >
+                      </td>
+
+                      <td class="align-middle text-center">
+                        <span class="status text-success">&bull;Active</span>
+                      </td>
+                      
+
+                      <td class="align-middle text-center">
+                        <a href="viewjobdetails"
+                          ><button type="button" class="btn btn-info btn-sm btn-rounded text-right mt-2">
+                            View
+                          </button></a
+                        >
+                      </td>
+                      <td class="align-middle">
+                        <a href="/"
+                          ><button
+                            type="button"
+                            onClick="delAlert()"
+                            class="btn btn-danger btn-sm btn-rounded text-right mt-2"
+                          >
+                            Delete User
+                          </button></a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
+    
+            <!--  Content End -->
+          </div>
         </div>
-    </div>
-    <hr>
-    <div class="row">
-        
-        <div class="col-lg-10" style="margin:auto ;">
-            
-            <div class="card-body pt-4 p-3" >
-                <ul class="list-group">
-                    <li class="list-group-item border-o d-flex p-4 mb-2 bg-grey-100 border-radius-lg">
-                        <div class="col-sm-6">
-                            <h5 class="text-dark font-weight-bold"><strong>Trainee Embedded Systems Engineer</strong></h5><br>
-                            <span class="text-dark font-weight-bold ">Preffered Qualification: <span class="text-xs">BsCS, BsIT, BsSE</span></span><br>
-                            <span class="text-dark font-weight-bold">Preffered Experience: <span class="text-xs">Fresh Graduate</span></span><br>
-                            <span class="text-dark font-weight-bold">Preffered Skills: <span class="text-xs">PLC, Rasberyy Pi</span></span><br>
-                            <span class="text-dark font-weight-bold">Required Results: <span class="text-xs">10</span></span><br>
-                            <span class="text-dark font-weight-bold">Date Created: <span class="text-xs">22/05/2022</span></span><br>
-                            <span class="status text-success">&bull;Active</span><br>
-                            <a href="/">Edit</a>
-                            <a href="/">Delete</a>
-                        </div>
-                        
-                        <div class="col-sm-6">
-                            <span class="text-dark font-weight-bold">Description: <span class="text-xs">Devomech Solutions is a startup providing services in Mechanical, Electronics, and Firmware / Software Development. We design and prototype innovative products for our overseas clients. We believe in uplifting the skillset of our team which enables us to deliver exceptional quality products to our clients.</span></span>
-                        </div>
-                    </li>
-                    <br>
-                    <li class="list-group-item border-o d-flex mb-2 bg-grey-100  border-radius-lg">
-                        <div class="col-sm-6">
-                            <h5 class="text-dark font-weight-bold"><strong>React Developer</strong></h5><br>
-                            <span class="text-dark font-weight-bold ">Preffered Qualification: <span class="text-xs">BsCS, BsIT, BsSE</span></span><br>
-                            <span class="text-dark font-weight-bold">Preffered Experience: <span class="text-xs">3years</span></span><br>
-                            <span class="text-dark font-weight-bold">Preffered Skills: <span class="text-xs">React, React Native, HTML, CSS</span></span><br>
-                            <span class="text-dark font-weight-bold">Required Results: <span class="text-xs">5</span></span><br>
-                            <span class="text-dark font-weight-bold">Date Created: <span class="text-xs">22/05/2022</span></span><br>
-                            <span class="status text-success">&bull;Active</span><br>
-                            <a href="#">Edit</a>
-                            <a href="#">Delete</a>
-                        </div>
-                        <div class="col-sm-6">
-                            <span class="text-dark font-weight-bold">Description: <span class="text-xs">Mobylogix is looking to hire Frontend Developer Intern. Good performance will lead to permanent employment.</span></span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>    
-</div> 
-
-
-  </section>
+      </div>
+    </section>
+    <script>
+      function delAlert() {
+        let text;
+        if (confirm("Are You Sure You Want To Delete User?") == true) {
+          text = "You pressed OK!";
+        } else {
+          text = "You canceled!";
+        }
+      }
+    </script>
+</section>
+  
 {% endblock content %}

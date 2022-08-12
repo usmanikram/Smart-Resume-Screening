@@ -40,5 +40,18 @@ def insights(request):
 def settings(request):
     context = {"segment" : "settings"}
     return render(request, 'settings.html', context)
+
 def finalreport(request):
     return render(request, 'finalreport.html')
+
+def viewjobs(request):
+    context={"segment":"viewjobs"}
+    return render(request, 'viewjobs.html',context)
+
+def viewjobdetails(request):
+    context={"segment":"viewjobdetails"}
+    return render(request, 'viewjobdetails.html',context)
+
+def editjob(request):
+    context={"segment":"editjob"}
+    return render(request, 'editjob.html',context)
