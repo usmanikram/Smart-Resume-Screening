@@ -14,6 +14,7 @@ path('insights',views.insights,name='insights'),
 path('settings',views.settings,name='settings'),
 path('createjob',views.createjob, name='createjob'),
 path('viewjobs',views.viewjobs,name='viewjobs'),
+path('finalreport',views.finalreport,name='finalreport'),
 
 path('viewjobdetails',views.viewjobdetails,name='viewjobdetails'),
 path('editjob',views.editjob,name='editjob'),
