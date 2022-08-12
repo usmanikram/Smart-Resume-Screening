@@ -1,0 +1,87 @@
+{% extends 'layouts/userdashboard.html'%}
+{% include 'user/scripts.html' %}
+{% block title %} View Job {% endblock title %}
+{% block content %}
+
+<section>
+    <div class="container-fluid py-4 bg-white">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="text-center">Job Detail</h3>
+                <p class="text-center">Complete job details and deliverables</p>
+
+                <div class="box">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="viewjobs" class="mb-15 d-block">
+                                    <i class="fa fa-angle-left"></i>
+                                    Back To All Jobs
+                                </a>
+                                <div class="d-md-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h4 class="mb-0" style="color: #8833ff;">Junior FullStack Developer</h4>
+                                        <p class="text-fade">Systems Limited</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-6 company-details" style="text-align: right; ">
+                                <h4 class="name mb-0" >
+                                    <a target="_blank" href="javascript:;" style="color: #8833ff;">
+                                    Systems Limited
+                                    </a>
+                                </h4>
+                                <div>E-1 DHA Phase-VIII,Lahore, Pakistan</div>
+                                <div>+92 (42) 111-797-836</div>
+                                <div>company@example.com</div>
+                            </div>
+                        </div>
+                        
+                        
+                        <hr style=" border: 1px solid #8833ff;">
+                        <div class="row">
+                            <div class="col-9 px-3">
+                                <h5 class="fw-500" >Job Description</h5>
+                                <p class="text-fade" style="text-align: justify;">We are looking for a motivated and enthusiastic Junior FullStack Developer to join our team! As a Junior FullStack Developer, you will be responsible for supporting our software development team in all aspects of the development, testing and implementation of our product.</p>
+                                
+                                <h5 class="fw-500" >Skills</h5>
+                                <p class="text-fade" style="text-align: justify;"> HTML/CSS, JavaScript, Node.Js, React.JS, Express.JS, MongoDB</p>
+                                
+                                <h5 class="fw-500" >Qualification</h5>
+                                <p class="text-fade">Bachelor in any of the related field (BsCS, BsIT, BsSE)</p>
+
+                                <h5 class="fw-500" >Experience</h5>
+                                <p class="text-fade"> Fresh graduate or 0-1 year</p>
+
+
+                                <h5 class="fw-500" >Location</h5>
+                                <p class="text-fade" style="text-align: justify;">Location: Lahore Office </p>
+
+                            </div>
+                            
+                            <div class="col-3 px-3" style="border: 2px solid blue; border-radius:20px;">
+                                <h5 class="fw-500 mt-4" >Employee Name</h5>
+                                <p class="text-fade" style="text-align: justify;">Abrar Rasul Qadri </p>
+
+                                <h5 class="fw-500" >Employee Email</h5>
+                                <p class="text-fade" style="text-align: justify;">email@example.com </p>
+
+                                <h5 class="fw-500" >Date Created on</h5>
+                                <p class="text-fade" style="text-align: justify;">20/07/2022 </p>
+
+                                <h5 class="fw-500" >Total Results </h5>
+                                <p class="text-fade" style="text-align: justify;">20 </p>
+
+                                <h5 class="fw-500" >Status</h5>
+                                <p class="text-fade" style="text-align: justify;">Active </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
