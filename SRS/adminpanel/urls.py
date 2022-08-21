@@ -5,8 +5,8 @@ from django.shortcuts import render
 
 urlpatterns = [
     path('',views.admindash,name='admindash'),
-    path('feedback',views.feedback,name='feedback'),
-    path('reports',views.reports,name='reports'),
+    path('Userfeedback',views.Userfeedback,name='Userfeedback'),
+    path('Userreports',views.Userreports,name='Userreports'),
     path('finalreport',views.finalreport,name='finalreport'),
     path('Users',views.Users,name='Users'),
     path('addUser',views.addUser,name='addUser'),
