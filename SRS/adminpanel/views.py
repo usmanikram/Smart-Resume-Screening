@@ -15,4 +15,8 @@ def addUser(request):
     return render(request,'addUser.html')
 def viewUser(request):
     return render(request,'viewUser.html')
+def viewjobs(request):
+    return render(request, 'viewjobs.html')
+def viewjobdetails(request):
+    return render(request, 'viewjobdetails.html')
 

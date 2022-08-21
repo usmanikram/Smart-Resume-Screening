@@ -17,9 +17,6 @@ def createjob(request):
     context={"segment": "createjob"}
     return render(request, 'createjob.html',context)
 
-def viewjobs(request):
-    context={"segment":"viewjobs"}
-    return render(request, 'viewjobs.html')
 
 def reports(request):
     context = {"segment" : "reports"}
@@ -43,14 +40,6 @@ def settings(request):
 
 def finalreport(request):
     return render(request, 'finalreport.html')
-
-def viewjobs(request):
-    context={"segment":"viewjobs"}
-    return render(request, 'viewjobs.html',context)
-
-def viewjobdetails(request):
-    context={"segment":"viewjobdetails"}
-    return render(request, 'viewjobdetails.html',context)
 
 def editjob(request):
     context={"segment":"editjob"}
