@@ -39,8 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'base.apps.BaseConfig',
     'users.apps.UsersConfig',
-    'adminpanel.apps.AdminpanelConfig'
+    'adminpanel.apps.AdminpanelConfig',
+    'crispy_forms'
 ]
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -83,6 +87,18 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'django', 
+#        'USER': 'postgres', 
+#        'PASSWORD': 'infinity123',
+#        'HOST': '127.0.0.1', 
+#        'PORT': '5432',
+#    }
+#}
 
 
 # Password validation
@@ -128,3 +144,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+AUTH_USER_MODEL = 'users.UserModel'
