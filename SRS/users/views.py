@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import CreateJobForm,CreateJobFormForResume
-from base.models import Resume,Candidate,Job,Qualification,Experience,Skills,UserModel
+from base.models import Resume,Candidate,Job,Qualification,Experience,Skills,User
 from pyresparser import ResumeParser
 from django.contrib.auth import logout
 

@@ -50,7 +50,7 @@ class MyUserManager(BaseUserManager):
 
 
 
-class UserModel(AbstractBaseUser):
+class User(AbstractBaseUser):
     firstname = models.CharField(max_length=200)
     lastname = models.CharField(max_length=200)
     contact = models.CharField(max_length=200, null = True )
@@ -73,7 +73,7 @@ class UserModel(AbstractBaseUser):
     REQUIRED_FIELDS = ['firstname','lastname',]
 
     class Meta:
-        app_label = "users"
+        app_label = "base"
         db_table = "UserModel"
 
     def __str__(self):
@@ -116,7 +116,7 @@ class UserModel(AbstractBaseUser):
 #         return self.firstname +' '+self.lastname
 
 class Job(models.Model):
-    user_id = models.ForeignKey(UserModel, on_delete=models.CASCADE, limit_choices_to={'is_approved': True})
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, limit_choices_to={'is_approved': True})
     title = models.CharField(max_length=200)
     description = models.CharField(max_length=200)
     location = models.CharField(max_length=200)

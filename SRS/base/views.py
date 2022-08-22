@@ -1,19 +1,30 @@
 from django.shortcuts import render, redirect
-from .forms import UserForm,LoginForm,CreateJobForm,CreateJobFormForResume
+from .forms import UserForm,LoginForm,CreateJobForm,CreateJobFormForResume,SignupForm
 from .models import Resume,Candidate
 from .parser import get_resume_data
-from pyresparser import ResumeParser
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
 
+#from pyresparser import ResumeParser
 # Create your views here.
 
 def home(request):
     return render(request, 'base/home.html')
   
 def signup(request):
-    context = {"segment" : "Sign Up"}
+    form = SignupForm()
+    if request.method == 'POST':
+        form = SignupForm(request.POST)
+        if form.is_valid():
+
+            f = form.save(commit=False)
+            f.set_password(f.password)
+            f.save()
+
+            messages.success(request, 'Account successfully created.')
+            return redirect('loginuser')
+    context = {"segment" : "Sign Up",'form':form}
     return render(request, 'base/signup.html',context)
   
 def ok(request):
@@ -89,8 +100,8 @@ def cjob(request):
             for f in files:   
                 r = Resume(job_id=j, file_path=f)
                 r.save()
-                data = ResumeParser(r.file_path.path).get_extracted_data()
-                c = Candidate(job_id=r.job_id,name=data['name'],contact=data['mobile_number'],email=data['email'],resume=r.file_path)
+                #data = ResumeParser(r.file_path.path).get_extracted_data()
+                #c = Candidate(job_id=r.job_id,name=data['name'],contact=data['mobile_number'],email=data['email'],resume=r.file_path)
                 c.save()
     else:
         jobform = CreateJobForm()
