@@ -7,5 +7,6 @@ urlpatterns = [
     path('addUser',views.ok , name="addUser"),
     path('login',views.login , name="login"),
     path('signup',views.signup,name='signup'),
+    path('signupuser',views.signup,name='signupuser'),
 ]
 
