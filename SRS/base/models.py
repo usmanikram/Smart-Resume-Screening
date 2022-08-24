@@ -164,13 +164,13 @@ class Candidate(models.Model):
 
 class Qualification(models.Model):
     candidate_id = models.ForeignKey(Candidate, on_delete=models.CASCADE)
-    programme = models.CharField(max_length=200)
-    institution = models.CharField(max_length=200)
+    programme = models.CharField(max_length=200, null=True)
+    institution = models.CharField(max_length=200,null=True)
     
 class Experience(models.Model):
     candidate_id = models.ForeignKey(Candidate, on_delete=models.CASCADE)
-    company_name = models.CharField(max_length=200)
-    role = models.CharField(max_length=200)
+    company_name = models.CharField(max_length=200,null=True)
+    role = models.CharField(max_length=200,null=True)
 
 
 class Skills(models.Model):

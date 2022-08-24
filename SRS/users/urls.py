@@ -13,7 +13,7 @@ path('addfeedback',views.addfeedback,name='addfeedback'),
 path('reports',views.reports,name='reports'),
 path('insights',views.insights,name='insights'),
 path('settings',views.settings,name='settings'),
-path('createjob',views.createjob, name='createjob'),
+path('createjob/<str:pk>',views.createjob, name='createjob'),
 path('viewjobs',views.viewjobs,name='viewjobs'),
 path('finalreport',views.finalreport,name='finalreport'),
 

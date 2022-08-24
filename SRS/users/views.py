@@ -3,6 +3,7 @@ from .forms import CreateJobForm,CreateJobFormForResume
 from base.models import Resume,Candidate,Job,Qualification,Experience,Skills,User
 from pyresparser import ResumeParser
 from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 
 def Logout(request):
     logout(request)
@@ -10,8 +11,8 @@ def Logout(request):
 
 
 # Create your views here.
+@login_required(login_url='loginuser')
 def dashboard(request):
-#    user = UserModel.objects.get(id=pk)
     context = {"segment" : "dashboard"}
     return render(request, 'dashboard.html', context)
 
@@ -19,15 +20,15 @@ def editprofile(request):
     context = {"segment" : "editprofile"}
     return render(request, 'editprofile.html', context)
 
-def jobs(request, pk):
-    jobs = Job.objects.get(user_id=pk)
-    context = {"segment" : "jobs", 'jobs':jobs}
+def jobs(request,pk):
+    job = Job.objects.filter(user_id=pk)
+    context = {"segment" : "jobs", "job": job}
     return render(request, 'jobs.html', context)
 
 # def createjob(request):
 #     context={"segment": "createjob"}
 #     return render(request, 'createjob.html',context)
-def createjob(request):
+def createjob(request,pk):
     if request.method == 'POST':
         jobform = CreateJobForm(request.POST , request.FILES)
         resumeform = CreateJobFormForResume(request.POST , request.FILES)
@@ -57,7 +58,7 @@ def viewjobs(request):
     context={"segment":"viewjobs"}
     return render(request, 'viewjobs.html')
 
-def reports(request):
+def reports(request,pk):
     context = {"segment" : "reports"}
     return render(request, 'reports.html', context)
 
@@ -84,11 +85,11 @@ def viewjobs(request):
     context={"segment":"viewjobs"}
     return render(request, 'viewjobs.html',context)
 
-def viewjobdetails(request, pk_test):
-    job = Job.objects.get(id=pk_test)
+def viewjobdetails(request,pk):
+    job = Job.objects.get(id=pk)
     u = job.user_id
-    user = Users.objects.get(id=u)
-    context={"segment":"viewjobdetails", 'job':job, 'user': user}
+    user = User.objects.get(email=u)
+    context={"segment":"viewjobdetails", 'job':job , 'user': user}
     return render(request, 'viewjobdetails.html',context)
 
 def editjob(request):

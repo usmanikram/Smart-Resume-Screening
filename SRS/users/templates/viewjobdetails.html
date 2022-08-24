@@ -21,7 +21,7 @@
                                 <div class="d-md-flex justify-content-between align-items-center">
                                     <div>
                                         <h4 class="mb-0" style="color: #8833ff;">{{job.title}}</h4>
-                                        <p class="text-fade">Systems Limited</p>
+                                        <p class="text-fade">{{user.company_name}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -29,12 +29,12 @@
                             <div class="col-6 company-details" style="text-align: right; ">
                                 <h4 class="name mb-0" >
                                     <a target="_blank" href="javascript:;" style="color: #8833ff;">
-                                    Systems Limited
+                                        {{user.company_name}}
                                     </a>
                                 </h4>
-                                <div>E-1 DHA Phase-VIII,Lahore, Pakistan</div>
-                                <div>+92 (42) 111-797-836</div>
-                                <div>company@example.com</div>
+                                <div>{{user.company_address}}</div>
+                                <div>{{user.company_contact}}</div>
+                                <div>{{user.email}}</div>
                             </div>
                         </div>
                         
@@ -62,15 +62,15 @@
                             
                             <div class="col-3 px-3" style="border: 2px solid blue; border-radius:20px;">
                                 <h5 class="fw-500 mt-4" >Employee Name</h5>
-                                <p class="text-fade" style="text-align: justify;">Abrar Rasul Qadri </p>
+                                <p class="text-fade" style="text-align: justify;">{{user.firstname}} {{user.lastname}}</p>
 
                                 <h5 class="fw-500" >Employee Email</h5>
-                                <p class="text-fade" style="text-align: justify;">email@example.com </p>
+                                <p class="text-fade" style="text-align: justify;">{{user.email}} </p>
 
                                 <h5 class="fw-500" >Date Created on</h5>
-                                <p class="text-fade" style="text-align: justify;">20/07/2022 </p>
+                                <p class="text-fade" style="text-align: justify;">{{job.creation_date}} </p>
 
-                                <h5 class="fw-500" >Total Results </h5>
+                                <h5 class="fw-500" >Total Candidates (Resume) </h5>
                                 <p class="text-fade" style="text-align: justify;">20 </p>
 
                                 <h5 class="fw-500" >Status</h5>

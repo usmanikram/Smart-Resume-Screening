@@ -30,7 +30,7 @@
           </a>
         </li>
         <li class="nav-item mb-1">
-          <a class="nav-link {% if 'jobs' in segment %} active {% endif %}" href="jobs">
+          <a class="nav-link {% if 'jobs' in segment %} active {% endif %}" href="{% url 'jobs' user.id %}">
             <div class="icon icon-shape icon-xs shadow border-radius-sm bg-gradient-light text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>briefcase-24 </title>
@@ -50,7 +50,7 @@
           </a>
         </li>
         <li class="nav-item mb-1">
-          <a class="nav-link {% if 'reports' in segment %} active {% endif %}" href="reports">
+          <a class="nav-link {% if 'reports' in segment %} active {% endif %}" href="{% url 'reports' %}">
             <div class="icon icon-shape icon-xs shadow border-radius-sm bg-gradient-light text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>briefcase-24 </title>
@@ -70,7 +70,7 @@
           </a>
         </li>
         <li class="nav-item mb-1">
-          <a class="nav-link {% if 'feedback' in segment %} active {% endif %}" href="feedback">
+          <a class="nav-link {% if 'feedback' in segment %} active {% endif %}" href="{% url 'feedback' %}">
             <div class="icon icon-shape icon-xs shadow border-radius-sm bg-gradient-light text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>briefcase-24 </title>
@@ -90,7 +90,7 @@
           </a>
         </li>
         <li class="nav-item mb-1">
-          <a class="nav-link {% if 'profile' in segment %} active {% endif %}" href="editprofile">
+          <a class="nav-link {% if 'profile' in segment %} active {% endif %}" href="{% url 'editprofile'  %}">
             <div class="icon icon-shape icon-xs shadow border-radius-sm bg-gradient-light text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>settings</title>
@@ -112,7 +112,7 @@
         </li>
 
         <li class="nav-item mb-1">
-          <a class="nav-link  {% if 'insights' in segment %} active {% endif %} " href="insights">
+          <a class="nav-link  {% if 'insights' in segment %} active {% endif %} " href="{% url 'insights'  %}">
             <div class="icon icon-shape icon-xs shadow border-radius-sm bg-gradient-light text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>customer-support</title>
@@ -133,7 +133,7 @@
         </li>
 
         <li class="nav-item mb-1">
-          <a class="nav-link {% if 'settings' in segment %} active {% endif %}  " href="settings">
+          <a class="nav-link {% if 'settings' in segment %} active {% endif %}  " href="{% url 'settings' %}">
             <div class="icon icon-shape icon-xs shadow border-radius-sm bg-gradient-light text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>document</title>
