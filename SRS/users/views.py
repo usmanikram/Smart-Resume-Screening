@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
+
+# from SRS.adminpanel.views import Users
 from .forms import CreateJobForm,CreateJobFormForResume
 from base.models import Resume,Candidate,Job,Qualification,Experience,Skills,User
-from pyresparser import ResumeParser
+# from pyresparser import ResumeParser
 from django.contrib.auth import logout
 
 def Logout(request):
