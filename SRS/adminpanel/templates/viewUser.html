@@ -13,13 +13,13 @@
                     <div class="col-md-6">
                       <label>Company Name</label>
                       <div class="input-group mb-4">
-                        <input class="form-control" placeholder="" aria-label="First Name..." type="text" value="Amazon" >
+                        <input class="form-control" placeholder="" aria-label="First Name..." type="text" value="{{user.company_name}}" >
                       </div>
                     </div>
                     <div class="col-md-6 ps-2">
                       <label>Company Contact</label>
                       <div class="input-group">
-                        <input type="text" class="form-control" placeholder="" aria-label="Last Name..." value="12345" >
+                        <input type="text" class="form-control" placeholder="" aria-label="Last Name..." value="{{user.company_contact}}" >
                       </div>
                     </div>
                   </div>
@@ -27,7 +27,7 @@
                 <div class="mb-4">
                   <label>Company Address</label>
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="" aria-label="Last Name..." value="CA, USA" >
+                    <input type="text" class="form-control" placeholder="" aria-label="Last Name..." value="{{user.company_address}}" >
                   </div>
                 </div>
               </div>
@@ -35,7 +35,7 @@
                 <div class="mb-4">
                     <label>Email Address</label>
                     <div class="input-group">
-                      <input type="email" class="form-control" placeholder="" value="jeff@amazon.com">
+                      <input type="email" class="form-control" placeholder="" value="{{user.email}}">
                     </div>
                   </div>
                 </div>
@@ -43,13 +43,13 @@
                   <div class="col-md-6">
                     <label>Employee First Name</label>
                     <div class="input-group mb-4">
-                      <input class="form-control" placeholder="" aria-label="First Name..." type="text"value="Jeff" >
+                      <input class="form-control" placeholder="" aria-label="First Name..." type="text"value="{{user.firstname}}" >
                     </div>
                   </div>
                   <div class="col-md-6 ps-2">
                     <label>Employee Last Name</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" placeholder="" aria-label="Last Name..." value="Bezos" >
+                      <input type="text" class="form-control" placeholder="" aria-label="Last Name..." value="{{user.lastname}}" >
                     </div>
                   </div>
                 </div>
@@ -57,13 +57,13 @@
                     <div class="col-md-6">
                       <label>Employee Designation</label>
                       <div class="input-group mb-4">
-                        <input class="form-control" placeholder="" aria-label="First Name..." type="text"value="CEO" >
+                        <input class="form-control" placeholder="" aria-label="First Name..." type="text"value="{{user.designation}}" >
                       </div>
                     </div>
                     <div class="col-md-6 ps-2">
                       <label>Employee Contact</label>
                       <div class="input-group">
-                        <input type="text" class="form-control" placeholder="" aria-label="Last Name..." value="007" >
+                        <input type="text" class="form-control" placeholder="" aria-label="Last Name..." value="{{user.contact}}" >
                       </div>
                     </div>
                   </div>

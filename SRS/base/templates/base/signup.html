@@ -1,5 +1,5 @@
 {% extends 'user/main.html'%}
-
+{% load crispy_forms_tags %}
 {%block content%}
 {% load static %}
 {% include 'user/navigation-auth.html'%}
@@ -29,49 +29,95 @@
           <br><br><br>
         <h3 class="text-center text-primary text-gradient">Sign Up</h3>
         <form role="form" id="contact-form" method="post" autocomplete="off">
+          {% csrf_token %}
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
-                <label>First Name</label>
+                <!-- <label>First Name</label> -->
                 <div class="input-group mb-4">
-                  <input class="form-control" placeholder="" aria-label="First Name..." type="text" >
+                  <!-- <input class="form-control" placeholder="" aria-label="First Name..." type="text" > -->
+                  {{ form.firstname | as_crispy_field }}
                 </div>
               </div>
               <div class="col-md-6 ps-2">
-                <label>Last Name</label>
+                <!-- <label>Last Name</label> -->
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="" aria-label="Last Name..." >
+                  {{ form.lastname | as_crispy_field }}
+                  <!-- <input type="text" class="form-control" placeholder="" aria-label="Last Name..." > -->
                 </div>
               </div>
             </div> 
             <div class="row">
             <div class="col-md-6">
-                <label>Company Name</label>
+                <!-- <label>Company Name</label> -->
                 <div class="input-group mb-4">
-                  <input class="form-control" placeholder="" aria-label="First Name..." type="text" >
+                  {{ form.contact | as_crispy_field }}
+                  <!-- <input class="form-control" placeholder="" aria-label="First Name..." type="text" > -->
                 </div>
               </div>
               <div class="col-md-6 ps-2">
-                <label>Company Address</label>
+                <!-- <label>Company Address</label> -->
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="" aria-label="Last Name..." >
+                  {{ form.designation | as_crispy_field }}
+                  <!-- <input type="text" class="form-control" placeholder="" aria-label="Last Name..." > -->
                 </div>
               </div>
             </div> 
             <div class="row">
             <div class="col-md-6">
-                <label>Email Address</label>
+                <!-- <label>Email Address</label> -->
+               
                 <div class="input-group mb-4">
-                  <input class="form-control" placeholder="" aria-label="First Name..." type="text" >
+                  {{ form.company_name | as_crispy_field }}
+                  <!-- <input class="form-control" placeholder="" aria-label="First Name..." type="text" > -->
                 </div>
               </div>
               <div class="col-md-6 ps-2">
-                <label>Password</label>
+                <!-- <label>Password</label> -->
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="" aria-label="Last Name..." >
+                  {{ form.company_contact | as_crispy_field }}
+                  <!-- <input type="text" class="form-control" placeholder="" aria-label="Last Name..." > -->
                 </div>
               </div>
             </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                  <!-- <label>Email Address</label> -->
+                 
+                  <div class="input-group mb-4">
+                    {{ form.company_address | as_crispy_field }}
+                    <!-- <input class="form-control" placeholder="" aria-label="First Name..." type="text" > -->
+                  </div>
+                </div>
+                <div class="col-md-6 ps-2">
+                  <!-- <label>Password</label> -->
+                  <div class="input-group">
+                    {{ form.email | as_crispy_field }}
+                    <!-- <input type="text" class="form-control" placeholder="" aria-label="Last Name..." > -->
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                    <!-- <label>Email Address</label> -->
+                   
+                    <div class="input-group mb-4">
+                      {{ form.password | as_crispy_field }}
+                      <!-- <input class="form-control" placeholder="" aria-label="First Name..." type="text" > -->
+                    </div>
+                  </div>
+                  <!-- <div class="col-md-6 ps-2">
+                    <label>Password</label>
+                    <div class="input-group">
+                      
+                      <input type="text" class="form-control" placeholder="" aria-label="Last Name..." >
+                    </div>
+                  </div> -->
+                </div>
+
+
             </div>
           
         

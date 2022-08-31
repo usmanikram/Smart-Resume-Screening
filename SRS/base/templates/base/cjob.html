@@ -1,0 +1,11 @@
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ jobform.as_p }}
+    {{ resumeform.as_p }}
+    
+    <button type="submit" class="btn btn-success">Create Job</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'layouts/userdashboard.html'%}
+
+{% block title %} Add Feedback {% endblock title %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+
+
+<h1>Signup</h1>
+
+
+<hr>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p}}
+             
+          
+          <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+           </div>
+           <button type="submit" class="btn btn-success">Signup</button>
+      </div>
+        </div>
+
+ 
+   
+    
+</form>
+
+{% endblock content %}
