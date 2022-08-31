@@ -121,4 +121,4 @@ def rjob(request):
     else:
         resumeform = CreateJobFormForResume()
     context = {'resumeform':resumeform}
-    return render(request,'base/rjob.html',context)    
+    return render(request,'base/rjob.html',context)
