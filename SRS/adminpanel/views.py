@@ -40,3 +40,8 @@ def viewUser(request, pk):
     context={'user':user}
     return render(request,'viewUser.html', context)
 
+def viewjobs(request):
+    return render(request, 'viewjobs.html')
+
+def viewjobdetails(request):
+    return render(request, 'viewjobdetails.html')    
