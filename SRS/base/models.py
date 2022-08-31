@@ -123,7 +123,6 @@ class Job(models.Model):
     qualification = models.CharField(max_length=200)
     skills = models.CharField(max_length=200)
     experience = models.CharField(max_length=200)
-#    resume = models.CharField(max_length=200)
     creation_date = models.DateTimeField(auto_now_add=True)
     is_completed = models.BooleanField(default=False)
 
@@ -133,16 +132,16 @@ class Job(models.Model):
 
 class Resume(models.Model):
     job_id = models.ForeignKey(Job, on_delete=models.CASCADE, null = True)
-    file_path = models.FileField(upload_to='uploads/resume/')
+    resume = models.FileField(upload_to='uploads/resume/')
 
 
 class Report(models.Model):
     job_id = models.ForeignKey(Job, on_delete=models.CASCADE)
-    file_path = models.FileField()
+    report = models.FileField()
 
 
 class Feedback(models.Model):
-    job_id = models.ForeignKey(Job, on_delete=models.CASCADE)
+    job_id = models.OneToOneField(Job, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     description = models.CharField(max_length=200)
     rating = models.CharField(max_length=1)
@@ -164,16 +163,16 @@ class Candidate(models.Model):
 
 class Qualification(models.Model):
     candidate_id = models.ForeignKey(Candidate, on_delete=models.CASCADE)
-    programme = models.CharField(max_length=200)
-    institution = models.CharField(max_length=200)
+    programme = models.CharField(max_length=200, null=True)
+    institution = models.CharField(max_length=200,null=True)
     
 class Experience(models.Model):
     candidate_id = models.ForeignKey(Candidate, on_delete=models.CASCADE)
-    company_name = models.CharField(max_length=200)
-    role = models.CharField(max_length=200)
+    company_name = models.CharField(max_length=200,null=True)
+    role = models.CharField(max_length=200,null=True)
 
 
-class Skills(models.Model):
+class Skill(models.Model):
     candidate_id = models.ForeignKey(Candidate, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
 
