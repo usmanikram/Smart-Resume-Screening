@@ -10,6 +10,6 @@ urlpatterns = [
     path('finalreport',views.finalreport,name='finalreport'),
     path('Users',views.Users,name='Users'),
     path('addUser',views.addUser,name='addUser'),
-    path('viewUser',views.viewUser,name='viewUser'),
+    path('viewUser/<str:pk>',views.viewUser,name='viewUser'),
   ]
 

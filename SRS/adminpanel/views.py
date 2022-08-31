@@ -35,6 +35,8 @@ def addUser(request):
             # return redirect('')
     context = {"segment" : "AddUser",'form':form}
     return render(request, 'addUser.html',context)
-def viewUser(request):
-    return render(request,'viewUser.html')
+def viewUser(request, pk):
+    user = User.objects.get(id=pk)
+    context={'user':user}
+    return render(request,'viewUser.html', context)
 
