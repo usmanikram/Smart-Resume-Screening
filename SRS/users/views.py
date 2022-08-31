@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from .forms import CreateJobForm,CreateJobFormForResume
-from base.models import Resume,Candidate,Job,Qualification,Experience,Skills,User
-from pyresparser import ResumeParser
+from .forms import CreateJobForm,CreateJobFormForResume,EditUserForm
+from base.models import Resume,Candidate,Job,Qualification,Experience,Skill,User
+#from pyresparser import ResumeParser
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 
@@ -16,7 +16,12 @@ def dashboard(request):
     context = {"segment" : "dashboard"}
     return render(request, 'dashboard.html', context)
 
-def editprofile(request):
+def editprofile(request,pk):
+    if request.method == 'POST':
+        user = User.objects.get(id=pk)
+        editform = EditUserForm(request.POST,instance=user)
+        if editform.is_valid():
+            editform.save()
     context = {"segment" : "editprofile"}
     return render(request, 'editprofile.html', context)
 
@@ -32,21 +37,23 @@ def createjob(request,pk):
     if request.method == 'POST':
         jobform = CreateJobForm(request.POST , request.FILES)
         resumeform = CreateJobFormForResume(request.POST , request.FILES)
-        files = request.FILES.getlist('file_path')
+        files = request.FILES.getlist('resume')
         if jobform.is_valid():
-            j = jobform.save()
+            j = jobform.save(commit=False)
+            j.user_id = request.user
+            j.save()
             for f in files:   
-                r = Resume(job_id=j, file_path=f)
+                r = Resume(job_id=j, resume=f)
                 r.save()
                 # ETL Pipeline
-                data = ResumeParser(r.file_path.path).get_extracted_data()
-                c = Candidate(job_id=r.job_id,name=data['name'],contact=data['mobile_number'],email=data['email'],resume=r.file_path)
-                c.save()
-                q = Qualification(candidate_id=c, programme = data['degree'], institution = data['degree'] )
-                q.save()
-                e = Experience(candidate_id=c, company_name = data['experience'], role = data['experience'] )
-                e.save()
-                s = Skills(candidate_id=c, name = data['skills'])
+#                data = ResumeParser(r.resume.path).get_extracted_data()
+#                c = Candidate(job_id=r.job_id,name=data['name'],contact=data['mobile_number'],email=data['email'],resume=r.resume)
+#                c.save()
+#                q = Qualification(candidate_id=c, programme = data['degree'], institution = data['degree'] )
+#                q.save()
+#                e = Experience(candidate_id=c, company_name = data['experience'], role = data['experience'] )
+#                e.save()
+#                s = Skill(candidate_id=c, name = data['skills'])
                 s.save()
     else:
         jobform = CreateJobForm()
@@ -92,6 +99,6 @@ def viewjobdetails(request,pk):
     context={"segment":"viewjobdetails", 'job':job , 'user': user}
     return render(request, 'viewjobdetails.html',context)
 
-def editjob(request):
+def editjob(request): 
     context={"segment":"editjob"}
     return render(request, 'editjob.html',context)

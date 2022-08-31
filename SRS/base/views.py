@@ -50,7 +50,7 @@ def loginuser(request):
         else:
             messages.info(request, 'Incorrect Email and Password')
     
-    context = {}
+    context = {"segment" : "Sign In"}
     return render(request, 'base/login.html',context)
 
 
