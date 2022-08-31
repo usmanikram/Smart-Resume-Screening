@@ -188,3 +188,4 @@ class Project(models.Model):
     candidate_id = models.ForeignKey(Candidate, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     description = models.CharField(max_length=200)
+
