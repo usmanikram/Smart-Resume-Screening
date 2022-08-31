@@ -5,8 +5,10 @@ from django.shortcuts import render
 urlpatterns = [
     path('',views.home, name="home"),
     path('addUser',views.ok , name="addUser"),
-    path('login',views.login , name="login"),
+    path('login',views.loginuser , name="loginuser"),
     path('signup',views.signup,name='signup'),
-    path('signupuser',views.signup,name='signupuser'),
+    path('test',views.test,name='test'),
+    path('cjob',views.cjob,name='cjob'),
+    path('rjob',views.rjob,name='rjob'),
 ]
 
