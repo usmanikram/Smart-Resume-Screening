@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+
 from .forms import CreateJobForm,CreateJobFormForResume,EditUserForm
 from base.models import Resume,Candidate,Job,Qualification,Experience,Skill,User
 #from pyresparser import ResumeParser

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import UserForm,LoginForm,CreateJobForm,CreateJobFormForResume,SignupForm
 from .models import Resume,Candidate
-from .parser import get_resume_data
+# from .parser import get_resume_data
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
@@ -121,4 +121,4 @@ def rjob(request):
     else:
         resumeform = CreateJobFormForResume()
     context = {'resumeform':resumeform}
-    return render(request,'base/rjob.html',context)    
+    return render(request,'base/rjob.html',context)

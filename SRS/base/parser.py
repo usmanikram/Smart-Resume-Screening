@@ -1,4 +1,4 @@
-from pyresparser import ResumeParser
+# from pyresparser import ResumeParser
 #import spacy
 #nlp = spacy.load('en_core_web_sm')
 #print(nlp._path)
