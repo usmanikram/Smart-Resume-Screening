@@ -40,6 +40,11 @@ def viewUser(request, pk):
     context={'user':user}
     return render(request,'viewUser.html', context)
 
+def deleteUser(request, pk):
+    user = User.objects.get(id=pk)
+    user.delete()
+    return render(request,'admindash.html')
+ 
 def viewjobs(request):
     return render(request, 'viewjobs.html')
 

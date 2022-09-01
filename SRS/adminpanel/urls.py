@@ -11,6 +11,7 @@ urlpatterns = [
     path('Users',views.Users,name='Users'),
     path('addUser',views.addUser,name='addUser'),
     path('viewUser/<str:pk>',views.viewUser,name='viewUser'),
+    path('deleteUser/<str:pk>',views.deleteUser,name='deleteUser'),
     path('viewjobs',views.viewjobs,name='viewjobs'),
     path('viewjobdetails',views.viewjobdetails,name='viewjobdetails'),
   ]
