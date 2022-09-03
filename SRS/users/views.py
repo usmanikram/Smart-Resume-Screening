@@ -97,7 +97,9 @@ def viewjobdetails(request,pk):
     job = Job.objects.get(id=pk)
     u = job.user_id
     user = User.objects.get(email=u)
-    context={"segment":"viewjobdetails", 'job':job , 'user': user}
+    can_count = Candidate.objects.filter(job_id=pk).count()
+    candidates = Candidate.objects.filter(job_id=pk)
+    context={"segment":"viewjobdetails", 'job':job , 'user': user, 'can_count': can_count, 'candidates': candidates}
     return render(request, 'viewjobdetails.html',context)
 
 def editjob(request): 
