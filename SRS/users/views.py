@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 from .forms import CreateJobForm,CreateJobFormForResume,EditUserForm
 from base.models import Resume,Candidate,Job,Qualification,Experience,Skill,User
-#from pyresparser import ResumeParser
+from pyresparser import ResumeParser
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 
@@ -46,15 +46,15 @@ def createjob(request,pk):
             for f in files:   
                 r = Resume(job_id=j, resume=f)
                 r.save()
-                # ETL Pipeline
-#                data = ResumeParser(r.resume.path).get_extracted_data()
-#                c = Candidate(job_id=r.job_id,name=data['name'],contact=data['mobile_number'],email=data['email'],resume=r.resume)
-#                c.save()
-#                q = Qualification(candidate_id=c, programme = data['degree'], institution = data['degree'] )
-#                q.save()
-#                e = Experience(candidate_id=c, company_name = data['experience'], role = data['experience'] )
-#                e.save()
-#                s = Skill(candidate_id=c, name = data['skills'])
+                #ETL Pipeline
+                data = ResumeParser(r.resume.path).get_extracted_data()
+                c = Candidate(job_id=r.job_id,name=data['name'],contact=data['mobile_number'],email=data['email'],resume=r.resume)
+                c.save()
+                q = Qualification(candidate_id=c, programme = data['degree'], institution = data['degree'] )
+                q.save()
+                e = Experience(candidate_id=c, company_name = data['experience'], role = data['experience'] )
+                e.save()
+                s = Skill(candidate_id=c, name = data['skills'])
                 s.save()
     else:
         jobform = CreateJobForm()
