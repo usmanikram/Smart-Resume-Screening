@@ -12,7 +12,8 @@ urlpatterns = [
     path('addUser',views.addUser,name='addUser'),
     path('viewUser/<str:pk>',views.viewUser,name='viewUser'),
     path('deleteUser/<str:pk>',views.deleteUser,name='deleteUser'),
+    path('deleteJob/<str:pk>',views.deleteJob,name='deleteJob'),
     path('viewjobs',views.viewjobs,name='viewjobs'),
-    path('viewjobdetails',views.viewjobdetails,name='viewjobdetails'),
+    path('viewjobdetails/<str:pk>',views.viewjobdetails,name='viewjobdetails'),
   ]
 

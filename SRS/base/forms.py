@@ -1,4 +1,5 @@
 from django.forms import ModelForm
+from django import forms
 from .models import User,Job,Resume
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
@@ -22,6 +23,12 @@ class SignupForm(ModelForm):
     class Meta:
         model = User
         fields = '__all__'
+        widgets = {
+            'password': forms.PasswordInput,
+            'email': forms.EmailInput,
+            'contact': forms.NumberInput,
+            'company_contact': forms.NumberInput,
+        }
         exclude = ('last_login','is_approved','is_staff','is_active',)
 
     def __init__(self, *args, **kwargs):

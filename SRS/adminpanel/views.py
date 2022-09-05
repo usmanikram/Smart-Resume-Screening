@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from base.models import User,Feedback,Report
+from base.models import User,Feedback,Report,Job
 from .forms import addUserForm
 
 # Create your views here.
@@ -44,9 +44,20 @@ def deleteUser(request, pk):
     user = User.objects.get(id=pk)
     user.delete()
     return render(request,'admindash.html')
- 
-def viewjobs(request):
-    return render(request, 'viewjobs.html')
 
-def viewjobdetails(request):
-    return render(request, 'viewjobdetails.html')    
+def deleteJob(request, pk):
+    job = Job.objects.get(id=pk)
+    job.delete()
+    return render(request,'admindash.html')
+
+
+def viewjobs(request):
+    obj=Job.objects.all()
+    return render(request, 'viewjobs.html',
+    { 'obj' :obj})
+    
+
+def viewjobdetails(request, pk):
+    job= Job.objects.get(id=pk)
+    context={'job':job}
+    return render(request, 'Aviewjobdetails.html',context)    
