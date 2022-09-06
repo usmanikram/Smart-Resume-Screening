@@ -98,6 +98,29 @@ def viewjobdetails(request,pk):
     return render(request, 'viewjobdetails.html',context)
 
 @login_required(login_url='loginuser')
+def editjob(request, pk):
+    job = Job.objects.get(id=pk) 
+    context={"segment":"editjob", "job":job}
+    return render(request, 'editjob.html',context)
+
+
+@login_required(login_url='loginuser')
+def updatejob(request,pk):
+    job_description = request.POST['description']
+    job_qualification = request.POST['qualification']
+    job_experience = request.POST['experience']
+    job_skills = request.POST['skills']
+    job = Job.objects.get(id=pk)
+    job.description = job_description
+    job.qualification = job_qualification
+    job.experience = job_experience
+    job.skills = job_skills
+    job.save()
+    context = { "segment" : "jobs"}
+    return render(request, 'jobs.html',context)
+
+
+@login_required(login_url='loginuser')
 def deletejob(request, pk):
     job = Job.objects.get(id=pk)
     job.delete()
@@ -132,6 +155,3 @@ def viewjobs(request):
     return render(request, 'viewjobs.html',context)
 
 
-def editjob(request): 
-    context={"segment":"editjob"}
-    return render(request, 'editjob.html',context)
