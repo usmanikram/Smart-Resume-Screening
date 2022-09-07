@@ -155,6 +155,9 @@ class Candidate(models.Model):
     contact = models.CharField(max_length=200)
     email = models.CharField(max_length=200)
     resume = models.FileField()
+    category = models.CharField(max_length=200)
+    is_shortlisted = models.BooleanField(default=False)
+    rank = models.CharField(max_length=2)
 
 
     def __str__(self):

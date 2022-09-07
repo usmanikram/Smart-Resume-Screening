@@ -21,6 +21,8 @@ path('settings',views.settings,name='settings'),
 path('createjob/<str:pk>',views.createjob, name='createjob'),
 path('viewjobs',views.viewjobs,name='viewjobs'),
 path('finalreport',views.finalreport,name='finalreport'),
+path('shortlist/<str:pk>',views.shortlist,name='shortlist'),
+
 
 
 

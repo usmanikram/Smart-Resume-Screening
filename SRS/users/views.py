@@ -5,6 +5,8 @@ from base.models import Resume,Candidate,Job,Qualification,Experience,Skill,User
 from pyresparser import ResumeParser
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from .ml import extractTextPdf, cleanResumeText
+import os, pickle
 
 def Logout(request):
     logout(request)
@@ -80,12 +82,14 @@ def createjob(request,pk):
                 e.save()
                 s = Skill(candidate_id=c, name = data['skills'])
                 s.save()
-                return redirect ('jobs', pk)
+            return redirect ('jobs', pk)
     else:
         jobform = CreateJobForm()
         resumeform = CreateJobFormForResume()
     context = {'jobform':jobform ,'resumeform':resumeform}
     return render(request,'createjob.html',context)
+
+
 
 @login_required(login_url='loginuser')
 def viewjobdetails(request,pk):
@@ -154,4 +158,42 @@ def viewjobs(request):
     context={"segment":"viewjobs"}
     return render(request, 'viewjobs.html',context)
 
+
+
+def shortlist(request,pk):
+    c = Candidate.objects.filter(job_id=pk)
+    j = Job.objects.get(id=pk)
+    modulePath = os.path.dirname(__file__)
+    path1 = os.path.join(modulePath, 'model/onevrest_knn_model.pkl')
+    path2 = os.path.join(modulePath, 'model/onevrest_knn_labelencoder.pkl')
+    path3 = os.path.join(modulePath, 'model/onevrest_knn_tfidfvectorizer.pkl')
+
+    with open(path1, "rb") as modelFile:
+        model = pickle.load(modelFile)
+
+    with open(path2, "rb") as labelencoderFile:
+        le = pickle.load(labelencoderFile)
+
+    with open(path3, "rb") as tfidfvectorizerFile:
+        vectorizer = pickle.load(tfidfvectorizerFile)
+
+    for cand in c:
+        r = cand.resume
+        resumeText = extractTextPdf(r)
+        cleanedText = cleanResumeText(resumeText)
+        textFeatures = vectorizer.transform([cleanedText])
+        pred = model.predict(textFeatures)
+        prediction = le.inverse_transform(pred)[0]
+        cand.category = prediction
+        cand.save()
+
+        title = j.title
+
+        if prediction in title:
+            cand.is_shortlisted = True
+            cand.save()
+
+
+    context={"segment":"viewjobs"}
+    return render(request, 'viewjobs.html',context)
 
