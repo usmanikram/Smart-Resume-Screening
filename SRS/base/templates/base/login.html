@@ -11,7 +11,10 @@
 {% block content %}
 <html>
   <body> 
+    
     {% include 'user/navigation-auth.html' %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.31/sweetalert2.min.js" integrity="sha512-aBqjkT2/vsvX+aKE8T8453SvYzNIql9Dinj960TBQdV/rFsxZvUL6NRlZX6L3mlsW04PxnZGZ8sIaITJhgy3bQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.31/sweetalert2.css" integrity="sha512-e+TwvhjDvKqpzQLJ7zmtqqz+5jF9uIOa+5s1cishBRfmapg7mqcEzEl44ufb04BXOsEbccjHK9V0IVukORmO8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <div class="page-header" style="min-height: 100vh;">
       <div class="container">
         <div class="row">
@@ -29,18 +32,23 @@
                   {% csrf_token %}
                   <label>Email</label>
                   <div class="mb-3">
-                    <input type="email" name="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                    <input type="email" name="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon" required >
                   </div>
                   <label>Password</label>
                   <div class="mb-3">
-                    <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                    <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon" required >
                   </div>
                   <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
                     <label class="form-check-label" for="rememberMe">Remember me</label>
                   </div>
                   <div class="text-center">
-                    <button type="submit" class="btn bg-gradient-primary w-100 mt-4 mb-0">Sign In</button>
+                    <button onclick="Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: 'Something went wrong!',
+                      footer: 'Why do I have this issue?'
+                    })" type="button" class="btn bg-gradient-primary w-100 mt-4 mb-0">Sign In</button>
                   </div>
                 </form>
               </div>
@@ -55,7 +63,7 @@
             <div class="col-md-6">
               
               <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
-              <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" style="background-image:url('{% static 'assets/img/ab.jpg'%}');">
+              <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6 login-image">
                 </div>
                 
                 
@@ -83,6 +91,8 @@
       }
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
+    
+    
   </script>
 </html>
 

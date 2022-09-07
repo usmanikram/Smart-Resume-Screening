@@ -103,5 +103,13 @@ height:auto;width: 100%;
   background-color: #a51bb2;
   
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+.login-image{
+  background-image:url('../img/ab.jpg');
+}
 
 
