@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
-
+from django.conf import settings
+import os
+#fs_resume = FileSystemStorage(location='media/resume')
+#fs_reports= FileSystemStorage(location='media/reports')
 
 
 class MyUserManager(BaseUserManager):
@@ -116,7 +119,7 @@ class User(AbstractBaseUser):
 #         return self.firstname +' '+self.lastname
 
 class Job(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, limit_choices_to={'is_approved': True})
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     description = models.CharField(max_length=200)
     location = models.CharField(max_length=200)
@@ -124,6 +127,7 @@ class Job(models.Model):
     skills = models.CharField(max_length=200)
     experience = models.CharField(max_length=200)
     creation_date = models.DateTimeField(auto_now_add=True)
+    completion_date = models.DateTimeField(null=True)
     is_completed = models.BooleanField(default=False)
 
 
@@ -132,12 +136,14 @@ class Job(models.Model):
 
 class Resume(models.Model):
     job_id = models.ForeignKey(Job, on_delete=models.CASCADE, null = True)
-    resume = models.FileField(upload_to='uploads/resume/')
+    resume = models.FileField(upload_to=os.path.join(settings.MEDIA_ROOT,'resume'))
 
 
 class Report(models.Model):
     job_id = models.ForeignKey(Job, on_delete=models.CASCADE)
-    report = models.FileField()
+    title = models.CharField(max_length=200)
+    creation_date = models.DateTimeField(auto_now_add=True)
+    report = models.FileField(upload_to=os.path.join(settings.MEDIA_ROOT,'report'))
 
 
 class Feedback(models.Model):
@@ -157,7 +163,7 @@ class Candidate(models.Model):
     resume = models.FileField()
     category = models.CharField(max_length=200)
     is_shortlisted = models.BooleanField(default=False)
-    rank = models.CharField(max_length=2)
+#    rank = models.CharField(max_length=2, null=True)
 
 
     def __str__(self):

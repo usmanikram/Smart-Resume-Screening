@@ -21,6 +21,8 @@
                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
                 <th class="text-secondary opacity-7"></th>
                 <th class="text-secondary opacity-7"></th>
+                <th class="text-secondary opacity-7"></th>
+                <th class="text-secondary opacity-7"></th>
               </tr>
             </thead>
             <tbody>
@@ -56,6 +58,15 @@
                   {% endif %}
                 </td>
                 <td class="align-middle">
+                  {% if jobs.is_completed %}
+                 
+                  {% else %}
+                  <a href="{% url 'shortlist' jobs.id %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                    <button type="button" class="btn btn-success text-right">Shortlist</button>
+                    </a>
+                  {% endif %}
+                </td>
+                <td class="align-middle">
                     <a href="{% url 'viewjobdetails' jobs.id %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                     <button type="button" class="btn btn-success text-right">View</button>
                     </a>
@@ -66,33 +77,33 @@
                     </a>
                   </td>
                   <td class="align-middle">
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Delete Job</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">
-                           Are You Sure You Want To Delete This Job ?
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
-                            <a href="{% url 'deletejob' jobs.id %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                            <button type="button" class="btn bg-gradient-primary">Yes</button></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button type="button" class="btn btn-danger text-right" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
+
+                    <button type="button" class="btn btn-danger text-right" data-bs-toggle="modal" data-bs-target="#modal{{jobs.id}}">Delete</button>
                  
                   </td>
               </tr>
 
               <!-- Modal -->
-
+              <div class="modal fade" id="modal{{jobs.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Delete Job</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                     Are You Sure You Want To Delete This Job ?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+                      <a href="{% url 'deletejob' jobs.id %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                      <button type="button" class="btn bg-gradient-primary">Yes</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
               {% endfor %}
               {% else %}
               <tr>
@@ -121,6 +132,9 @@
                  
                 </td>
                 <td class="align-middle">
+                   
+                  </td>
+                  <td class="align-middle">
                    
                   </td>
                   <td class="align-middle">

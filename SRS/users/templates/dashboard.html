@@ -207,21 +207,10 @@
                   <h4>Jobs</h4>
                   <p class="text-sm mb-0">
                     <i class="fa fa-check text-info" aria-hidden="true"></i>
-                    <span class="font-weight-bold ms-1">30 done</span> this month
+                    <span class="font-weight-bold ms-1">{{job_comp_count}}</span> job completed this month
                   </p>
                 </div>
-                <div class="col-lg-6 col-5 my-auto text-end">
-                  <div class="dropdown float-lg-end pe-4">
-                    <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fa fa-ellipsis-v text-secondary"></i>
-                    </a>
-                    <ul class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable">
-                      <li><a class="dropdown-item border-radius-md" href="javascript:;">Action</a></li>
-                      <li><a class="dropdown-item border-radius-md" href="javascript:;">Another action</a></li>
-                      <li><a class="dropdown-item border-radius-md" href="javascript:;">Something else here</a></li>
-                    </ul>
-                  </div>
-                </div>
+         
               </div>
             </div>
             <div class="card-body px-0 pb-2">
@@ -230,35 +219,85 @@
                   <thead>
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Designation</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Candidates</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Industry</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Description</th>
+                      <!-- <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Industry</th> -->
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Creation Date</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
+                      <th class="text-secondary opacity-7"></th>
+                      <th class="text-secondary opacity-7"></th>
+                      <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
                   <tbody>
+                    {% if job %}
+                    {% for jobs in job %}
                     <tr>
                       <td>
                         <div class="d-flex px-2 py-1">
-                          <div>
+                          <!-- <div>
                             <img src="/static/assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3">
-                          </div>
+                          </div> -->
+                          
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">DevOps Engineer</h6>
+                            <h6 class="mb-0 text-sm">{{ jobs.title }}</h6>
                           </div>
                         </div>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">100 </span>
+                        <span class="text-xs font-weight-bold">{{jobs.description}}</span>
                       </td>
-                      <td class="align-middle text-center text-sm">
+                      <!-- <td class="align-middle text-center text-sm">
                         <span class="text-xs font-weight-bold">Information Technology </span>
+                      </td> -->
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">{{jobs.creation_date}}</span>
                       </td>
                       <td class="align-middle text-center">
+                        {% if jobs.is_completed %}
                         <h6><span class="badge bg-gradient-success text-xxs">Completed</span></h6>
+                        {% else %}
+                        <h6><span class="badge bg-gradient-danger text-xxs">Not Completed</span></h6>
+                        {% endif %}
                       </td>
-              
+                      <td class="align-middle">
+                          <a href="{% url 'viewjobdetails' jobs.id %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                          <button type="button" class="btn btn-success text-right">View</button>
+                          </a>
+                        </td>
+                        <td class="align-middle">
+                          <a href="{% url 'editjob' jobs.id %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                          <button type="button" class="btn btn-info">Edit</button>
+                          </a>
+                        </td>
+                        <td class="align-middle">
+      
+                          <button type="button" class="btn btn-danger text-right" data-bs-toggle="modal" data-bs-target="#modal{{jobs.id}}">Delete</button>
+                       
+                        </td>
                     </tr>
-                    <tr>
+      
+                    <!-- Modal -->
+                    <div class="modal fade" id="modal{{jobs.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Delete Job</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                           Are You Sure You Want To Delete This Job ?
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+                            <a href="{% url 'deletejob' jobs.id %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                            <button type="button" class="btn bg-gradient-primary">Yes</button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <tr>
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
@@ -367,7 +406,43 @@
                         <span class="badge bg-gradient-success text-xxs">Completed</span>
                       </td>
                 
+                    </tr> -->
+                    {% endfor %}
+                    {% else %}
+                    <tr>
+               
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <!-- <div>
+                            <img src="/static/assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3">
+                          </div> -->
+                          
+                          <div class="d-flex flex-column justify-content-center">
+                          
+                          </div>
+                        </div>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+      
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <h3> No Jobs Found. Please Create a Job First.</h3>
+                      </td>
+                      <td class="align-middle text-center">
+                    
+                      </td>
+                      <td class="align-middle text-center">
+                       
+                      </td>
+                      <td class="align-middle">
+                         
+                        </td>
+                        <td class="align-middle">
+                         
+                        </td>
                     </tr>
+      
+                    {% endif %}
                   </tbody>
                 </table>
               </div>

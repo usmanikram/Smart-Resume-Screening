@@ -1,12 +1,17 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import CreateJobForm,CreateJobFormForResume,EditUserForm
-from base.models import Resume,Candidate,Job,Qualification,Experience,Skill,User
+from .forms import CreateJobForm,CreateJobFormForResume,EditUserForm, FeedbackForm
+from base.models import *
 from pyresparser import ResumeParser
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
-from .ml import extractTextPdf, cleanResumeText
+from .ml import extractTextPdf, cleanResumeText, render_to_pdf
 import os, pickle
+from io import BytesIO
+from xhtml2pdf import pisa
+from django.core.files import File
+from datetime import date
+
 
 def Logout(request):
     logout(request)
@@ -17,7 +22,10 @@ def Logout(request):
 # Create your views here.
 @login_required(login_url='loginuser')
 def dashboard(request):
-    context = {"segment" : "dashboard"}
+    user = request.user
+    job = Job.objects.filter(user_id=user)
+    job_comp_count = Job.objects.filter(user_id=user, is_completed=True).count()
+    context = {"segment" : "dashboard", "job":job, "job_comp_count":job_comp_count}
     return render(request, 'dashboard.html', context)
 
 
@@ -86,7 +94,7 @@ def createjob(request,pk):
     else:
         jobform = CreateJobForm()
         resumeform = CreateJobFormForResume()
-    context = {'jobform':jobform ,'resumeform':resumeform}
+    context = {"segment":"jobs",'jobform':jobform ,'resumeform':resumeform}
     return render(request,'createjob.html',context)
 
 
@@ -98,7 +106,7 @@ def viewjobdetails(request,pk):
     user = User.objects.get(email=u)
     can_count = Candidate.objects.filter(job_id=pk).count()
     candidates = Candidate.objects.filter(job_id=pk)
-    context={"segment":"viewjobdetails", 'job':job , 'user': user, 'can_count': can_count, 'candidates': candidates}
+    context={"segment":"jobs", 'job':job , 'user': user, 'can_count': can_count, 'candidates': candidates}
     return render(request, 'viewjobdetails.html',context)
 
 @login_required(login_url='loginuser')
@@ -130,18 +138,55 @@ def deletejob(request, pk):
     job.delete()
     return redirect ('jobs', pk)
 
-
+@login_required(login_url='loginuser')
 def reports(request,pk):
-    context = {"segment" : "reports"}
+    report = Report.objects.filter(job_id__user_id=pk)
+    context = {"segment" : "reports", "report":report}
     return render(request, 'reports.html', context)
 
-def feedback(request):
-    context = {"segment" : "feedback"}
+@login_required(login_url='loginuser')
+def feedback(request,pk):
+    fb = Feedback.objects.filter(job_id__user_id=pk)
+    context = {"segment" : "feedback", "fb":fb}
     return render(request, 'feedback.html', context)
     
-def addfeedback(request):
-    context = {"segment" : "addfeedback"}
+@login_required(login_url='loginuser')
+def pendingfeedback(request,pk):
+    job = Job.objects.filter(user_id=pk).exclude(is_completed=False) 
+    context = {"segment" : "feedback", "job":job}
+    return render(request, 'pendingfeedback.html', context)
+    
+@login_required(login_url='loginuser')  
+def addfeedback(request,pk):
+    fbform = FeedbackForm(request.POST)
+    job = Job.objects.get(id=pk)
+    if request.method == 'POST':
+        
+        if fbform.is_valid():    
+            f = fbform.save(commit=False)
+            f.job_id=job
+            f.title=job.title
+            f.save()
+  
+
+    context = {"segment" : "addfeedback", "job":job, "fbform": fbform}
     return render(request, 'addfeedback.html', context)
+
+@login_required(login_url='loginuser')
+def viewfeedback(request,pk):
+    fb = Feedback.objects.get(id=pk)
+
+    context={"segment":"feedback", "fb":fb}
+    return render(request, 'viewfeedback.html',context)
+
+@login_required(login_url='loginuser')
+def deletefeedback(request,pk):
+    fb = Feedback.objects.get(id=pk)
+    fb.delete()
+    return redirect ('feedback', pk)
+
+    context={"feedback":"feedback"}
+    return render(request, 'feedback.html',context)
 
 def insights(request):
     context = {"segment" : "insights"}
@@ -157,6 +202,15 @@ def finalreport(request):
 def viewjobs(request):
     context={"segment":"viewjobs"}
     return render(request, 'viewjobs.html',context)
+
+def reporttemplate(request,pk):
+    job = Job.objects.get(id=pk)
+    u = job.user_id
+    user = User.objects.get(email=u)
+    can_count = Candidate.objects.filter(job_id=pk).count()
+    candidates = Candidate.objects.filter(job_id=pk)
+    context={"segment":"viewjobs",'job':job , 'user': user, 'can_count': can_count, 'candidates': candidates}
+    return render(request, 'reporttemplate.html',context)
 
 
 
@@ -192,8 +246,27 @@ def shortlist(request,pk):
         if prediction in title:
             cand.is_shortlisted = True
             cand.save()
+        
+    j.is_completed = True
+    j.completion_date = date.today()
+    j.save()
+    job = Job.objects.get(id=pk)
+    u = job.user_id
+    user = User.objects.get(email=u)
+    can_count = Candidate.objects.filter(job_id=pk).count()
+    candidates = Candidate.objects.filter(job_id=pk)
+    context={"segment":"jobs", 'job':job , 'user': user, 'can_count': can_count, 'candidates': candidates}     
+    pdf = render_to_pdf('reporttemplate.html', context)
+    filename = "JobReport.pdf"
+    r = Report()
+    r.job_id = job
+    r.title = job.title
+    r.report.save(filename, File(BytesIO(pdf.content)))
 
 
-    context={"segment":"viewjobs"}
-    return render(request, 'viewjobs.html',context)
+    context={"segment":"reports"}
+    return render(request, 'reports.html',context)
+
+    
+
 

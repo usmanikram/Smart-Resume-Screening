@@ -1,0 +1,126 @@
+{% load static %}
+{% include 'user/scripts.html' %}
+<html>
+<head>
+    <style type="text/css">
+      body {
+  font-family: 'Times New Roman', Times, serif;
+}
+      .center {
+  text-align: center;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+      </style>
+
+</head>
+<body>
+  
+    <div class="center">
+      <h1>Smart Resume Screening</h1>
+      </div>
+    <div class="center">
+        <h2>Job Report</h2>
+        </div>
+        <div class="row">
+          <div class="column" >
+            <h1>Job Details</h1>
+            <h4>Job Title: {{job.title}}</h4>
+            <h4>Description: {{job.description}}</h4>
+            <h4>Skills: {{job.skills}}</h4>
+            <h4>Qualification: {{job.qualification}}</h4>
+            <h4>Experience: {{job.experience}}</h4>
+            <h4>Location: {{job.location}}</h4>
+            <h4>Creation Date: {{job.creation_date}}</h4>
+            <h4>Total Candidates: {{ can_count }} </h4>
+          </div>
+
+          <div class="column" >
+            <h1>Company Details</h1>
+            <h4>Name: {{user.company_name}}</h4>
+            <h4>Address: {{user.company_address}}</h4>
+            <h4>Contact :{{user.company_contact}}</h4>
+            <h4>Email: {{user.email}}</h4>
+          </div>
+        </div>
+
+        
+            <hr style=" border: 1px solid #8833ff;">
+
+
+
+        <div>
+            <h3 class="text-center">Candidates Detail</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th >Name</th>
+                    <th>Email</th>
+                    <th >Contact</th>
+                    <th >Resume</th>
+                    <th >Shortlisted</th>
+                    <th >Rank</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    
+                  <tr>
+                    {% if candidates %}
+                  {% for candidate in candidates %}
+                    <td>
+                      <div >
+                        <!-- <div>
+                          <img src="/static/assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3">
+                        </div> -->
+                        
+                        <div >
+                          <h6>{{ candidate.name }}</h6>
+                        </div>
+                      </div>
+                    </td>
+                    <td >
+                      <span >{{ candidate.email }}</span>
+                    </td>
+                    <td>
+                      <span>{{ candidate.contact }} </span>
+                    </td>
+                    <td>
+                      <span ><a href="{% static candidate.resume %}">View</a></span>
+    
+                      <!-- Modal -->
+
+                    </td>
+                    <td>
+                      {% if candidate.is_shortlisted %}
+                      <span>Yes</span>
+                      {% else %}
+                      <span>No</span>
+                      {% endif %}
+                    </td>
+                    <td>
+                      <span>{{ candidate.rank }}</span>
+                    </td>
+    
+                 
+                  </tr>
+                  {% endfor %}
+                  {% else %}
+                  <tr>
+                   <td> <h2>No</h2></td>
+                   
+                  </tr>
+                {% endif %}
+                 
+    
+                </tbody>
+              </table>
+            </div>
+          </div>
+</body>
+</html>
