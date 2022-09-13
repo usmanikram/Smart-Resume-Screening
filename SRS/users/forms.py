@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from base.models import Job,Resume,User
+from base.models import *
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 from django.forms import ClearableFileInput
@@ -26,3 +26,8 @@ class EditUserForm(ModelForm):
         exclude = ('last_login','is_approved','is_staff','is_active',)
 
 
+class FeedbackForm(ModelForm):
+    class Meta:
+        model = Feedback
+        fields = '__all__'
+        exclude = ('job_id','title',)

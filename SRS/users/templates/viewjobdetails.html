@@ -1,5 +1,6 @@
 {% extends 'layouts/userdashboard.html'%}
 {% include 'user/scripts.html' %}
+{% load static %}
 {% block title %} View Job {% endblock title %}
 {% block content %}
 
@@ -14,7 +15,7 @@
                     <div class="box-body">
                         <div class="row">
                             <div class="col-6">
-                                <a href="viewjobs" class="mb-15 d-block">
+                                <a href="{% url 'jobs' user.id %}" class="mb-15 d-block">
                                     <i class="fa fa-angle-left"></i>
                                     Back To All Jobs
                                 </a>
@@ -71,7 +72,7 @@
                                 <p class="text-fade" style="text-align: justify;">{{job.creation_date}} </p>
 
                                 <h5 class="fw-500" >Total Candidates (Resume) </h5>
-                                <p class="text-fade" style="text-align: justify;">20 </p>
+                                <p class="text-fade" style="text-align: justify;">{{ can_count }} </p>
 
                                 <h5 class="fw-500" >Status</h5>
                                 <p class="text-fade" style="text-align: justify;">
@@ -88,7 +89,104 @@
                 </div>
             </div>
         </div>
+        <hr style=" border: 1px solid #8833ff;">
     </div>
+
+    <div class="container-fluid py-4 bg-white">
+        <h3 class="text-center">Candidates Detail</h3>
+        <div class="table-responsive">
+          <table class="table align-items-center mb-0">
+            <thead>
+              <tr>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Contact</th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Resume</th>
+                <!-- <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Shortlisted</th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Rank</th> -->
+              </tr>
+            </thead>
+            <tbody>
+                
+              <tr>
+                {% if candidates %}
+              {% for candidate in candidates %}
+                <td>
+                  <div class="d-flex px-2 py-1">
+                    <!-- <div>
+                      <img src="/static/assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3">
+                    </div> -->
+                    
+                    <div class="d-flex flex-column justify-content-center">
+                      <h6 class="mb-0 text-sm">{{ candidate.name }}</h6>
+                    </div>
+                  </div>
+                </td>
+                <td class="align-middle text-center text-sm">
+                  <span class="text-xs font-weight-bold">{{ candidate.email }}</span>
+                </td>
+                <td class="align-middle text-center text-sm">
+                  <span class="text-xs font-weight-bold">{{ candidate.contact }} </span>
+                </td>
+                <td class="align-middle text-center">
+                  <span class="text-secondary text-xs font-weight-bold"> <a href="{{candidate.resume.url}}" target=”_blank” ><button type="button" class="btn bg-gradient-primary" >
+                    View
+                  </button></a></span>
+
+                  <!-- Modal -->
+<!-- <div class="modal fade" id="modal{{candidate.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{candidate.name}} Resume </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <object data="{{candidate.resume.url}}" type="application/pdf" width="100%" height="750px">
+            <embed src="{% get_media_prefix %}{{candidate.resume}}" type="application/pdf">
+                <p>This browser does not support PDFs. Please download the PDF to view it:Download PDF.</p>
+            </embed>
+        </object>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div> -->
+                </td>
+                <!-- <td class="align-middle text-center">
+                  {% if candidate.is_shortlisted %}
+                  <span class="text-secondary text-xs font-weight-bold">Yes</span>
+                  {% else %}
+                  <span class="text-secondary text-xs font-weight-bold">No</span>
+                  {% endif %}
+                </td>
+                <td class="align-middle text-center">
+                  <span class="text-secondary text-xs font-weight-bold">{{ candidate.rank }}</span>
+                </td> -->
+
+             
+              </tr>
+              {% endfor %}
+              {% else %}
+              <tr>
+               <td> <h2>No</h2></td>
+               
+              </tr>
+            {% endif %}
+             
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
 </section>
 
 {% endblock content %}

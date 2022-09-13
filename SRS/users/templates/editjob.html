@@ -10,37 +10,37 @@
             <h2>Edit Job</h2>
             <p class="lead">Update the job description and criteria of your job for shortlisting the candidates</p>
         </div>
-        <div class="needs-validation" novalidate>
+        <form class="needs-validation" novalidate method="post" action="{% url 'updatejob' job.id %}">
+            {% csrf_token %}
             <div class="row " style="margin-bottom: 5em;">
                 <div class="col-sm-6 col-md-6">
                 
                     <label for="jobTitle" class="form-label">Job Title</label>
-                        <input type="text" class="form-control mb-3" id="jobTitle" required>
+                        <input type="text" class="form-control mb-3" id="jobTitle" readonly value="{{ job.title }}">
                         <div class="invalid-feedback">
                             Job Title is Required
                         </div>
                     <label for="jobDesc" class="form-label">Description</label>
-                        <textarea class="form-control mb-3" id="jobDesc" required rows="5"></textarea>
+                    <input type="text" class="form-control mb-3" name="description" value="{{ job.description }}">
+                        <!-- <textarea class="form-control mb-3" id="jobDesc" rows="5" value="{{ job.description }}"></textarea> -->
                         <div class="invalid-feedback">
                             Job Description is Required
                         </div>
                     <label for="qualification" class="form-label">Qualification</label>
-                        <input type="text" class="form-control mb-3" id="qualification" required>
+                        <input type="text" class="form-control mb-3" name="qualification" value="{{ job.qualification }}">
                         <div class="invalid-feedback">
                             Valid Qualification is Required
                         </div>
                     <label for="experience" class="form-label">Experience</label>
-                        <input type="text" class="form-control mb-3" id="experience" required>
+                        <input type="text" class="form-control mb-3" name="experience" value="{{ job.experience}}">
                         <div class="invalid-feedback">
                             Years of Experience is Required
                         </div>
-                    <label for="uResume" class="form-label">Upload Resume</label><br>
-                        <input type="file" id="uResume" name="uResume" multiple>
-                    <label for="jobResults" class="form-label py-2">Required Results</label>
-                        <input type="number" min="5" max="50" value="5" id="jobResults" >
+                        <label for="experience" class="form-label">Skills</label>
+                        <input type="text" class="form-control mb-3" name="skills" value="{{ job.skills}}">
                 </div>
                 
-                <div class="col-sm-6 col-md-6">
+                <!-- <div class="col-sm-6 col-md-6">
                     <div class="wrap" style="border-radius:20px; background-color: rgb(248, 249, 249);">
                         <label for="skills" class="form-label py-2 px-5">Add Skills</label>
                             <div class="input-group mb-3 px-5">
@@ -55,12 +55,12 @@
                             <button id="addRow" type="button" class="btn btn-info ">Add +</button>
                         </p>
                     </div>    
-                </div>
+                </div> -->
                 <div class="text-center">
-                    <button type="button" class="btn btn-primary mt-4" >Save Changes</button>
+                    <button type="submit" class="btn btn-primary mt-4" >Save Changes</button>
                 </div>
             </div>    
-        </div>
+        </form>
     </div>
 
 </section>

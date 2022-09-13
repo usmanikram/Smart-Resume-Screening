@@ -1,0 +1,51 @@
+{% extends 'layouts/userdashboard.html'%}
+
+{% block title %} Feedback {% endblock title %}
+{% block content %}
+<section>
+    <div class="container-fluid py-4 bg-white">
+      <div class="row">
+        <div class="col-lg-12 ">
+          <h3 class="text-center">Feedback</h3>
+          <form role="form" id="contact-form" method="post" autocomplete="off">
+            {% csrf_token %}
+            <div class="card-body">
+ 
+              <div class="row">
+                <div class="mb-4">
+
+                 <label>Job Title</label>
+                  <div class="input-group">
+                    <input class="form-control" placeholder="" name="title" aria-label="First Name..." type="text" value="{{ fb.title }}" readonly >
+                   </div>
+                </div>
+             
+
+                <div class="row">
+                  <div class="form-group">
+                    <input class="form-control" placeholder="" name="title" aria-label="First Name..." type="text" value="{{ fb.rating }}" readonly >
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group">
+                   
+                 
+                    <label for="exampleFormControlTextarea1">Description</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="descripti" readonly>{{ fb.description }}</textarea>
+                  </div>
+                  </div>
+          
+                <div class="col-md-12">
+                  <a href="{% url 'feedback' user.id %}"><button type="button" class="btn bg-gradient-primary w-100">Go Back</button></a>
+                  <a href="{% url 'deletefeedback' fb.id %}"><button type="button" class="btn bg-gradient-danger w-100">Delete</button></a>
+                </div>
+              </div>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}

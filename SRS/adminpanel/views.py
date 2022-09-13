@@ -40,6 +40,7 @@ def viewUser(request, pk):
     context={'user':user}
     return render(request,'viewUser.html', context)
 
+
 def deleteUser(request, pk):
     user = User.objects.get(id=pk)
     user.delete()
@@ -61,3 +62,4 @@ def viewjobdetails(request, pk):
     job= Job.objects.get(id=pk)
     context={'job':job}
     return render(request, 'Aviewjobdetails.html',context)    
+
