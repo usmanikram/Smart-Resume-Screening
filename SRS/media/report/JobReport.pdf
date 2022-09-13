@@ -1,0 +1,283 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R /F3 4 0 R /F4 5 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Times-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/BaseFont /Times-Roman /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
+>>
+endobj
+5 0 obj
+<<
+/BaseFont /ZapfDingbats /Name /F4 /Subtype /Type1 /Type /Font
+>>
+endobj
+6 0 obj
+<<
+/Contents 42 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 41 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+7 0 obj
+<<
+/Outlines 9 0 R /PageMode /UseNone /Pages 41 0 R /Type /Catalog
+>>
+endobj
+8 0 obj
+<<
+/Author () /CreationDate (D:20220914015539-05'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20220914015539-05'00') /Producer (xhtml2pdf <https://github.com/xhtml2pdf/xhtml2pdf/>) 
+  /Subject () /Title () /Trapped /False
+>>
+endobj
+9 0 obj
+<<
+/Count 13 /First 10 0 R /Last 23 0 R /Type /Outlines
+>>
+endobj
+10 0 obj
+<<
+/Count -1 /Dest [ 6 0 R /Fit ] /First 11 0 R /Last 11 0 R /Next 12 0 R /Parent 9 0 R 
+  /Title (Smart Resume Screening)
+>>
+endobj
+11 0 obj
+<<
+/Dest [ 6 0 R /Fit ] /Parent 10 0 R /Title (Job Report)
+>>
+endobj
+12 0 obj
+<<
+/Count -1 /Dest [ 6 0 R /Fit ] /First 13 0 R /Last 13 0 R /Next 23 0 R /Parent 9 0 R 
+  /Prev 10 0 R /Title (Job Details)
+>>
+endobj
+13 0 obj
+<<
+/Count -1 /Dest [ 6 0 R /Fit ] /First 14 0 R /Last 14 0 R /Parent 12 0 R /Title (Job Title: Software Engineer)
+>>
+endobj
+14 0 obj
+<<
+/Count -8 /Dest [ 6 0 R /Fit ] /First 15 0 R /Last 22 0 R /Parent 13 0 R /Title (Job Title: Software Engineer)
+>>
+endobj
+15 0 obj
+<<
+/Dest [ 6 0 R /Fit ] /Next 16 0 R /Parent 14 0 R /Title (Job Title: Software Engineer)
+>>
+endobj
+16 0 obj
+<<
+/Dest [ 6 0 R /Fit ] /Next 17 0 R /Parent 14 0 R /Prev 15 0 R /Title (Description: Looking for fresh graduate with fyp in web based application)
+>>
+endobj
+17 0 obj
+<<
+/Dest [ 6 0 R /Fit ] /Next 18 0 R /Parent 14 0 R /Prev 16 0 R /Title (Skills: HTML, CSS, PHP, MYSQL)
+>>
+endobj
+18 0 obj
+<<
+/Dest [ 6 0 R /Fit ] /Next 19 0 R /Parent 14 0 R /Prev 17 0 R /Title (Qualification: BSCS)
+>>
+endobj
+19 0 obj
+<<
+/Dest [ 6 0 R /Fit ] /Next 20 0 R /Parent 14 0 R /Prev 18 0 R /Title (Experience: 0)
+>>
+endobj
+20 0 obj
+<<
+/Dest [ 6 0 R /Fit ] /Next 21 0 R /Parent 14 0 R /Prev 19 0 R /Title (Location: Gulberg, Lahore)
+>>
+endobj
+21 0 obj
+<<
+/Dest [ 6 0 R /Fit ] /Next 22 0 R /Parent 14 0 R /Prev 20 0 R /Title (Creation Date: Sept. 13, 2022, 8:37 p.m.)
+>>
+endobj
+22 0 obj
+<<
+/Dest [ 6 0 R /Fit ] /Parent 14 0 R /Prev 21 0 R /Title (Total Candidates: 8 )
+>>
+endobj
+23 0 obj
+<<
+/Count -1 /Dest [ 6 0 R /Fit ] /First 24 0 R /Last 24 0 R /Parent 9 0 R /Prev 12 0 R 
+  /Title (Company Details)
+>>
+endobj
+24 0 obj
+<<
+/Count -2 /Dest [ 6 0 R /Fit ] /First 25 0 R /Last 30 0 R /Parent 23 0 R /Title (Name: AMC)
+>>
+endobj
+25 0 obj
+<<
+/Count -4 /Dest [ 6 0 R /Fit ] /First 26 0 R /Last 29 0 R /Next 30 0 R /Parent 24 0 R 
+  /Title (Name: AMC)
+>>
+endobj
+26 0 obj
+<<
+/Dest [ 6 0 R /Fit ] /Next 27 0 R /Parent 25 0 R /Title (Name: AMC)
+>>
+endobj
+27 0 obj
+<<
+/Dest [ 6 0 R /Fit ] /Next 28 0 R /Parent 25 0 R /Prev 26 0 R /Title (Address: Lahre,Punjab, Pakistan)
+>>
+endobj
+28 0 obj
+<<
+/Dest [ 6 0 R /Fit ] /Next 29 0 R /Parent 25 0 R /Prev 27 0 R /Title (Contact :03434527430)
+>>
+endobj
+29 0 obj
+<<
+/Dest [ 6 0 R /Fit ] /Parent 25 0 R /Prev 28 0 R /Title (Email: usmanikram.ch@gmail.com)
+>>
+endobj
+30 0 obj
+<<
+/Count -1 /Dest [ 6 0 R /Fit ] /First 31 0 R /Last 31 0 R /Parent 24 0 R /Prev 25 0 R 
+  /Title (Candidates Detail)
+>>
+endobj
+31 0 obj
+<<
+/Count -1 /Dest [ 6 0 R /Fit ] /First 32 0 R /Last 32 0 R /Parent 30 0 R /Title (Aamir adnan)
+>>
+endobj
+32 0 obj
+<<
+/Count -8 /Dest [ 6 0 R /Fit ] /First 33 0 R /Last 40 0 R /Parent 31 0 R /Title (Aamir adnan)
+>>
+endobj
+33 0 obj
+<<
+/Dest [ 6 0 R /Fit ] /Next 34 0 R /Parent 32 0 R /Title (Aamir adnan)
+>>
+endobj
+34 0 obj
+<<
+/Dest [ 6 0 R /Fit ] /Next 35 0 R /Parent 32 0 R /Prev 33 0 R /Title (Abdul Rauf)
+>>
+endobj
+35 0 obj
+<<
+/Dest [ 6 0 R /Fit ] /Next 36 0 R /Parent 32 0 R /Prev 34 0 R /Title (Abrar Qadri)
+>>
+endobj
+36 0 obj
+<<
+/Dest [ 6 0 R /Fit ] /Next 37 0 R /Parent 32 0 R /Prev 35 0 R /Title (Adil TanveerSoftware Engineer at)
+>>
+endobj
+37 0 obj
+<<
+/Dest [ 6 0 R /Fit ] /Next 38 0 R /Parent 32 0 R /Prev 36 0 R /Title (Ahmad Nabeel)
+>>
+endobj
+38 0 obj
+<<
+/Dest [ 6 0 R /Fit ] /Next 39 0 R /Parent 32 0 R /Prev 37 0 R /Title (ALEEM NAWAZ)
+>>
+endobj
+39 0 obj
+<<
+/Dest [ 6 0 R /Fit ] /Next 40 0 R /Parent 32 0 R /Prev 38 0 R /Title (Ali Aftab)
+>>
+endobj
+40 0 obj
+<<
+/Dest [ 6 0 R /Fit ] /Parent 32 0 R /Prev 39 0 R /Title (Ali Sohail)
+>>
+endobj
+41 0 obj
+<<
+/Count 1 /Kids [ 6 0 R ] /Type /Pages
+>>
+endobj
+42 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2047
+>>
+stream
+Gb!;e>uM\$'Rf.GgrCZtMS?LXWJ$A/).5etBd]IcaL2Krf"94R?(1chhHbV>W3a?C*JuRrm$2tDdCE>iG8X5)YibC^%.L,!YMV'B*-ri;P"=f-_.iArgVG1"g#?b<&0\I2@&tPQF,"1oO6];]Fc\Q6.?P1,E!+>BJ&W4f*_*=kAn#`SE%kpp#VHf.U4l1+#0%Lb6K(n&Lr:iW,1_R'-ZFE_\Cl`HUI6O]TJp1Q7A2XCVA;FYeE_=k^9F"7\^KV;?GVQffTd2!p=%^I6[)@QT;VM89B^eXhCCS@S.VU.C^=<a&P-,8\4Tp-;C%B?>3uA_9c0W,"eprZ@6mL0E#j$pM2RYK,gf4UF'g%_1c5Q=(2,_Y>Tg9OZ4P+&-em#2A'meh-:M(>2;+@m<>2Nl;5V;hJo<LU?3,iST8+)!hH5Mb[.nK;o.\4([;ns&7qrLiqT>YfF=BNqCRl`LOju[.NL)ku1*b;u9J%Wh\Ssjb:f6ho:K7tWX?6irAr.,rOC9fE14KG_@T;/ESFeYQ8osIE@*/gD7E;4J"Ti=`,Q61h#A#rqdNUo-Z_FtG^kYca_Pm+UCUbkME98V\[qTsoU[JjeF1Cmkke!f9Jt#H>FPuH3_$VnkFAu2C3aL9nlq=,A9q#YB,P]VI5O6*V\(cI0+$Oi*r(HeT/<mV9.&Nl/]X8rRmu?u$b[p$PZ+*<nVL-`#VCGU,\<hg"rN5PQ?P?eD4s+1ndpS?g7ZR+/'E"GMOZY.[9DO%&omM,9JMVLUPWk>91a7,$E^R@ihn#DD^7bsR0nWn4pQLKmIbt0$3U]4R,RdAfQinpiWAei'$R3M1($HBtbM^>#_fU\Q?k,graU0PTV6o>$pV\;7W@cEc0GiilE`.iD0)tq'@uF0PE%OJroS"sl\3F9/1"uO"r$7XQa)ZaMAB60je*S2:*Y4$N+@-*>dOK\.dk(OaqR@'JRrhiEi6qp,,V`0Jf&-q@8)bmb?F`?*7oW#&'fT"nmnk&t!ZH9RlgebN47O-ioa#0YZ-1UcdZ)B,qWFpU9en-:iNtQ2I>cF4#P2m0r-gq]]G?#a#2QDFYp:G20M,Ac/PAAC@<K96Bgsdn=fa[;8jH'ik(/$hd728J6!f&k6:!0,mb)0:lPF7g<&B5?2PeIXBU9AR/A!.6l&P75Dra[Z!S>o(9QIVOJo>J1K3l&R?lEZW9:2(*X]]OAIW#_O_C`$8XIJ:M&@p>J%>!0apFaHI,I_&k`Y&\prA9IH#nr,7O\aOV2o]`VM71KZM>n"G]GL6#O@!Ba;i3^E,T]6?''RCh*hTJApE)V)pOtNFDa>ja65##pSg5\ti,p7q6r'*+XMrs3\-4'nb30k>[;=rBS<i)fH0_oP%cEn^e-U:3NS&jFVRd@/"Re25TT+_"89:_'+qps1;YV_$K@%h,=R:Zb)WLGEL^"C';Q\fSGJm#2Ae"08;h*O%?;^M!oQA6p'Cql2dBDu02`&DAH@Ioti3So4Juua+Q67VK`'FTA>-4@P$+>.J>_6GLWtf-e#(&KAcLWl>6n&5nN[9c@db6[003nmNDHNd0L,TF<dBpgE!fZ)uCI4h:27Cq-B,UMG"6>]pLFGG5(3W_4BF1qk'U1@_=D0Akj*?sL&6I,,J>i?.mGYS2IStjk0@C8T0)sDtEd;kC$1,Y%/eb`E1hrV>3@n]ia[a<GQ4$G6[9>'5^jH#T/h^K>IuuBJ&e@3IaF0KeLZu:9VtWtis#SgT0=T7cmojoV'<h!W4-%),l@_WB+IZp\X"fkJLf@f>fX5%#M9kLm)o@<pHf*C0=iI$>.c-c0D:Q_u"rJdpmWR?jG#U)5_dYr*7]?\'JNu'<1'D&9q8Ki!V.ab<`/0#Ne'iBJ3<&=?pWrom#te<"Sp<QGh6$QY1A:LS4<?2mje9YG,Q832HOuQWC%Z^+L(rasC@Wp0j&+q7iSCDFjdO@j=$pCgWEn4Rd=Bcf)TM*M*o;>Arta\cF:?:TLQp0^LW+:\\%$=j'=>(BmVp#o5Aeb$/b&N)Sr\g?I8?9\7L+-C_Z;nnmmkrMCSJR[*cUTZk9?f]~>endstream
+endobj
+xref
+0 43
+0000000000 65535 f 
+0000000073 00000 n 
+0000000134 00000 n 
+0000000241 00000 n 
+0000000349 00000 n 
+0000000458 00000 n 
+0000000541 00000 n 
+0000000746 00000 n 
+0000000831 00000 n 
+0000001083 00000 n 
+0000001157 00000 n 
+0000001299 00000 n 
+0000001377 00000 n 
+0000001521 00000 n 
+0000001654 00000 n 
+0000001787 00000 n 
+0000001896 00000 n 
+0000002063 00000 n 
+0000002186 00000 n 
+0000002299 00000 n 
+0000002406 00000 n 
+0000002525 00000 n 
+0000002659 00000 n 
+0000002760 00000 n 
+0000002895 00000 n 
+0000003009 00000 n 
+0000003139 00000 n 
+0000003229 00000 n 
+0000003354 00000 n 
+0000003468 00000 n 
+0000003579 00000 n 
+0000003717 00000 n 
+0000003833 00000 n 
+0000003949 00000 n 
+0000004041 00000 n 
+0000004145 00000 n 
+0000004250 00000 n 
+0000004376 00000 n 
+0000004482 00000 n 
+0000004587 00000 n 
+0000004690 00000 n 
+0000004781 00000 n 
+0000004841 00000 n 
+trailer
+<<
+/ID 
+[<59119d8098bb7cacba2bcb8e8c3b7995><59119d8098bb7cacba2bcb8e8c3b7995>]
+% ReportLab generated PDF document -- digest (http://www.reportlab.com)
+
+/Info 8 0 R
+/Root 7 0 R
+/Size 43
+>>
+startxref
+6980
+%%EOF
