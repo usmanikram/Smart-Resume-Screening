@@ -136,15 +136,15 @@ class Job(models.Model):
 
 class Resume(models.Model):
     job_id = models.ForeignKey(Job, on_delete=models.CASCADE, null = True)
-    resume = models.FileField(upload_to=os.path.join(settings.MEDIA_ROOT,'resume'))
-
+    resume = models.FileField('/resume')
+#upload_to=os.path.join(settings.MEDIA_ROOT,'resume')
 
 class Report(models.Model):
     job_id = models.ForeignKey(Job, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     creation_date = models.DateTimeField(auto_now_add=True)
-    report = models.FileField(upload_to=os.path.join(settings.MEDIA_ROOT,'report'))
-
+    report = models.FileField(upload_to='/report')
+#upload_to=os.path.join(settings.MEDIA_ROOT,'report')
 
 class Feedback(models.Model):
     job_id = models.OneToOneField(Job, on_delete=models.CASCADE)
