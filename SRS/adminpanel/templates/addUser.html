@@ -11,15 +11,15 @@
           <form role="form" id="contact-form" method="post" autocomplete="off">
             {% csrf_token %}
             <div class="card-body">
-              <div class="row">
-                <div class="col-md-6">
+              <div class="row ">
+                <div class="col-md-3">
                   <!-- <label>First Name</label> -->
                   <div class="input-group mb-4">
                     <!-- <input class="form-control" placeholder="" aria-label="First Name..." type="text" > -->
                     {{ form.firstname | as_crispy_field }}
                   </div>
                 </div>
-                <div class="col-md-6 ps-2">
+                <div class="col-md-3 ps-2">
                   <!-- <label>Last Name</label> -->
                   <div class="input-group">
                     {{ form.lastname | as_crispy_field }}
@@ -28,14 +28,14 @@
                 </div>
               </div> 
               <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-3">
                   <!-- <label>Company Name</label> -->
                   <div class="input-group mb-4">
                     {{ form.contact | as_crispy_field }}
                     <!-- <input class="form-control" placeholder="" aria-label="First Name..." type="text" > -->
                   </div>
                 </div>
-                <div class="col-md-6 ps-2">
+                <div class="col-md-3 ps-2">
                   <!-- <label>Company Address</label> -->
                   <div class="input-group">
                     {{ form.designation | as_crispy_field }}
@@ -44,7 +44,7 @@
                 </div>
               </div> 
               <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-3">
                   <!-- <label>Email Address</label> -->
                  
                   <div class="input-group mb-4">
@@ -52,7 +52,7 @@
                     <!-- <input class="form-control" placeholder="" aria-label="First Name..." type="text" > -->
                   </div>
                 </div>
-                <div class="col-md-6 ps-2">
+                <div class="col-md-3 ps-2">
                   <!-- <label>Password</label> -->
                   <div class="input-group">
                     {{ form.company_contact | as_crispy_field }}
@@ -62,7 +62,7 @@
               </div>
   
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <!-- <label>Email Address</label> -->
                    
                     <div class="input-group mb-4">
@@ -70,7 +70,7 @@
                       <!-- <input class="form-control" placeholder="" aria-label="First Name..." type="text" > -->
                     </div>
                   </div>
-                  <div class="col-md-6 ps-2">
+                  <div class="col-md-3 ps-2">
                     <!-- <label>Password</label> -->
                     <div class="input-group">
                       {{ form.email | as_crispy_field }}
@@ -80,7 +80,7 @@
                 </div>
   
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-3">
                       <!-- <label>Email Address</label> -->
                      
                       <div class="input-group mb-4">
@@ -107,11 +107,11 @@
           
               <div class="row">
                
-                <div class="col-md-12">
+                <div class="col-md-3">
                   <button type="submit" class="btn bg-gradient-primary w-100">Add User</button>
                 </div>
                 <div class="col-md-12">
-                  <div class="form-check form-switch mb-4">
+                  <div class=" mb-4">
                     <label class="form-check-label" for="flexSwitchCheckDefault">Already Have An Account? <a href="login" class="text-dark"><u>Sign In</u></a></label>
                   </div>
                 </div>

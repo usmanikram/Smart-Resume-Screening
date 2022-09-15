@@ -23,11 +23,11 @@
         </a>
       </div>
       <div class="col-md-4">
-        <a href="insights">
+        <a href="feedback/{{ user.id }} ">
           <div class="card card-background move-on-hover">
             <div class="full-background" style="background-image: url('/static/assets/img/insights.jpg')"></div>
             <div class="card-body pt-8">
-              <h4 class="text-white">View Insights</h4>
+              <h4 class="text-white">View Feedbacks</h4>
              </div>
           </div>
         </a>
@@ -261,17 +261,17 @@
                       </td>
                       <td class="align-middle">
                           <a href="{% url 'viewjobdetails' jobs.id %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          <button type="button" class="btn btn-success text-right">View</button>
+                          <button type="button" class="btn bg-gradient-primary text-right">View</button>
                           </a>
                         </td>
                         <td class="align-middle">
                           <a href="{% url 'editjob' jobs.id %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          <button type="button" class="btn btn-info">Edit</button>
+                          <button type="button" class="btn bg-gradient-primary">Edit</button>
                           </a>
                         </td>
                         <td class="align-middle">
       
-                          <button type="button" class="btn btn-danger text-right" data-bs-toggle="modal" data-bs-target="#modal{{jobs.id}}">Delete</button>
+                          <button type="button" class="btn bg-gradient-primary text-right" data-bs-toggle="modal" data-bs-target="#modal{{jobs.id}}">Delete</button>
                        
                         </td>
                     </tr>

@@ -15,7 +15,7 @@ from datetime import date
 
 def Logout(request):
     logout(request)
-    messages.success(request, 'Logout Successful.')
+    messages.success(request, 'logout')
     return redirect('loginuser')
 
 

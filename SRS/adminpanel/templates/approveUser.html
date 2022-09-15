@@ -8,18 +8,7 @@
   <div class="container-fluid py-4 bg-white">
     <div class="row">
       <div class="col-lg-12">
-        <h3 class="text-center">Users</h3>
-        <a href="addUser"
-          ><button type="button" class="btn bg-gradient-primary text-right">
-            ADD NEW USER
-          </button></a
-        >
-        <a href="{% url 'approveUser' %}"
-          ><button type="button" class="btn bg-gradient-primary text-right mx-2">
-            UNAPPROVED USERS
-          </button></a
-        >
-
+        <h3 class="text-center">Unapproved Users</h3>
         <!--  Content Start -->
         <div class="card">
           <div class="table-responsive">
@@ -76,20 +65,13 @@
                     >
                   </td>
                   <td class="align-middle">
-                    <a href="viewUser/{{user.id}}"
-                      ><button type="button" class="btn bg-gradient-primary text-right">
-                        View
-                      </button></a
-                    >
-                  </td>
-                  <td class="align-middle">
                     <a 
                       ><button
                         type="button"
                         onClick="delAlert('{{user.id}}')"
                         class="btn bg-gradient-primary text-right"
                       >
-                        Delete User
+                        Approve User
                       </button></a
                     >
                   </td>

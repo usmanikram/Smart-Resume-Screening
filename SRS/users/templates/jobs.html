@@ -7,7 +7,7 @@
         <div class="row">
           <div class="col-lg-12 ">
             <h3 class="text-center">Jobs</h3>
-    <a href="{% url 'createjob' user.id %}"><button type="button" class="btn btn-success text-right">Create New Job</button></a>
+    <a href="{% url 'createjob' user.id %}"><button type="button" class="btn bg-gradient-primary text-right">Create New Job</button></a>
   
     <div class="card-body px-0 pb-2">
         <div class="table-responsive">
@@ -62,23 +62,23 @@
                  
                   {% else %}
                   <a href="{% url 'shortlist' jobs.id %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                    <button type="button" class="btn btn-success text-right">Shortlist</button>
+                    <button type="button" class="btn bg-gradient-primary text-right">Shortlist</button>
                     </a>
                   {% endif %}
                 </td>
                 <td class="align-middle">
                     <a href="{% url 'viewjobdetail' jobs.id %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                    <button type="button" class="btn btn-success text-right">View</button>
+                    <button type="button" class="btn bg-gradient-primary text-right">View</button>
                     </a>
                   </td>
                   <td class="align-middle">
                     <a href="{% url 'editjob' jobs.id %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                    <button type="button" class="btn btn-info">Edit</button>
+                    <button type="button" class="btn bg-gradient-primary">Edit</button>
                     </a>
                   </td>
                   <td class="align-middle">
 
-                    <button type="button" class="btn btn-danger text-right" data-bs-toggle="modal" data-bs-target="#modal{{jobs.id}}">Delete</button>
+                    <button type="button" class="btn bg-gradient-primary text-right" data-bs-toggle="modal" data-bs-target="#modal{{jobs.id}}">Delete</button>
                  
                   </td>
               </tr>

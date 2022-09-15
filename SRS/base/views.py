@@ -22,7 +22,7 @@ def signup(request):
             f.set_password(f.password)
             f.save()
 
-            messages.success(request, 'Account successfully created.')
+            messages.success(request, 'success')
             return redirect('loginuser')
     context = {"segment" : "Sign Up",'form':form}
     return render(request, 'base/signup.html',context)
@@ -45,10 +45,10 @@ def loginuser(request):
                 login(request, user)
                 return redirect('users/', pk=user.id)
             else:
-                messages.info(request, 'Account Not Approved')
+                messages.info(request, 'fail')
 
         else:
-            messages.info(request, 'Incorrect Email and Password')
+            messages.info(request, 'fail2')
     
     context = {"segment" : "Sign In"}
     return render(request, 'base/login.html',context)

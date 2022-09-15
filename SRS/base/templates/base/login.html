@@ -12,14 +12,43 @@
 <html>
   <body> 
     {% include 'user/navigation-auth.html' %}
-    <div class="page-header" style="min-height: 100vh;">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.33/sweetalert2.js" integrity="sha512-Wik6VzWpliJYZMjeHqoM4Hured+Z/mIvR9mTsIBHLFkqMYYchKpGP1ZFUro6XsPo4W2msCkSVqaw4/oDde+cmQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.33/sweetalert2.min.css" integrity="sha512-doewDSLNwoD1ZCdA1D1LXbbdNlI4uZv7vICMrzxfshHmzzyFNhajLEgH/uigrbOi8ETIftUGBkyLnbyDOU5rpA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <div class="page-header" id="customID" style="min-height: 100vh;">
       <div class="container">
         <div class="row">
           <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
             <div class="card card-plain mt-8">
               <div class="card-header pb-0 text-left bg-transparent">
-                {% for message in messages %}
-                    <p class="danger">{{ message }}</p>
+                {% for message in messages %}   
+                  {% if message.tags %}
+                      <p id="customID"></p>
+                      <script  type="text/javascript">
+                        var msg = "{{message}}";
+                        var mode = "success";
+                        var title = "Perfect !";
+                        if(msg === 'fail2')
+                        {
+                          msg = "Incorrect Email and Password!";
+                          mode = "error";
+                          title = "Unauthorized Access !";
+                        }
+                        if(msg === 'logout')
+                        {
+                          msg = "Logged Out Successfully!";
+                          mode = "success";
+                          title = "Logged Out!";
+                        }
+                        if(msg === 'fail')
+                        {
+                          msg = "Request Pending !";
+                          mode = "warning";
+                          title = "Wait for administrator approval!";
+                        }
+                        swal(title, msg, mode);
+                      </script>
+                  {% endif %}
                 {% endfor %}
                 <h3 class="text-primary text-gradient">Welcome back</h3>
                 <p class="mb-0">Enter your email and password to sign in</p>
@@ -68,6 +97,7 @@
         </div>
       </div>
     </div>
+    
   </body>
 
 {% endblock content %}
@@ -83,6 +113,7 @@
       }
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
+    alert("OK");
   </script>
 </html>
 
