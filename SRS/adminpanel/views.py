@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from base.models import User,Feedback,Report,Job
 from .forms import addUserForm
 from django.contrib.auth.decorators import login_required
@@ -28,7 +28,7 @@ def finalreport(request):
 
 @login_required(login_url='loginuser')
 def Users(request,):
-    object = User.objects.all()
+    object = User.objects.filter(is_staff = 'False', is_approved = 'True')
     return render(request,'Users.html',
     {'object' : object})
 
@@ -37,6 +37,13 @@ def approveUser(request):
     object = User.objects.filter(is_approved = 'False')
     return render(request,'approveUser.html',
     {'object' : object})
+
+@login_required(login_url='loginuser')
+def approveUserFunc(request, pk):
+    user = User.objects.get(id = pk)
+    user.is_approved = 'True'
+    user.save()
+    return redirect ('Users')
 
 @login_required(login_url='loginuser')
 def addUser(request):
